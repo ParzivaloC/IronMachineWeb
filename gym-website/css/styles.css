@@ -380,26 +380,36 @@ body {
 }
 
 /* Секция "Почему мы" */
-.why-grid {
+.why-container {
   display: grid;
   grid-template-columns: 1fr 360px;
   gap: 24px;
-  align-items: center;
+ 
   margin-bottom: 30px;
 }
 
 .why-media {
-  height: 260px;
+  height: 360px;
+
   background: #111;
   border-radius: 10px;
 }
 
-.why-list h4 {
+.why-list h2 {
+  width: 70%;
   color: var(--accent);
   margin-top: 0;
 }
 
 .why-list ul {
+  height: 210px;
+  font-weight: bold;
+  font-size: 18px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   color: #cfcfcf;
 }
 
@@ -432,14 +442,14 @@ body {
 }
 
 /* Секция с видео */
-.video .video-card {
+.video {
   background: transparent;
   padding: 22px 0;
 }
 
 /* Превью видео */
 .video-thumb {
-  height: 260px;
+  /* height: 260px; */
   border-radius: 12px;
   background: #222;
 }

@@ -147,56 +147,56 @@ const plansData = {
   },
 };
 
-// все элементы
-const modal = document.getElementById("planModal");
-const modalClose = document.getElementById("modalClose");
-const modalCloseBtn = document.getElementById("modalCloseBtn");
-const modalCategory = document.getElementById("modalCategory");
-const modalTitle = document.getElementById("modalTitle");
-const modalDescription = document.getElementById("modalDescription");
-const modalFeatures = document.getElementById("modalFeatures");
-const modalTags = document.getElementById("modalTags");
-
-// Функция открытия окна - заполняем данными выбранного курса
-function openModal(planId) {
-  const plan = plansData[planId];
-
-  if (!plan) return;
-
-  // Заполняем основную информацию о курсе
-  modalCategory.textContent = plan.category;
-  modalTitle.textContent = plan.title;
-  modalDescription.textContent = plan.description;
-
-  // Очищаем список особенностей и добавляем новые
-  modalFeatures.innerHTML = "";
-  for (let i = 0; i < plan.features.length; i++) {
-    const li = document.createElement("li");
-    li.textContent = plan.features[i];
-    modalFeatures.appendChild(li);
-  }
-
-  // Очищаем теги и добавляем новые
-  modalTags.innerHTML = "";
-  plan.tags.forEach(function (tag) {
-    const span = document.createElement("span");
-    span.className = "modal-tag";
-    span.textContent = tag;
-    modalTags.appendChild(span);
-  });
-
-  // Показываем модальное окно и блокируем прокрутку страницы
-  modal.classList.add("active");
-  document.body.style.overflow = "hidden";
-}
-
-function closeModal() {
-  modal.classList.remove("active");
-  document.body.style.overflow = "";
-}
-
 // Когда страница загрузилась - настраиваем обработчики событий
 document.addEventListener("DOMContentLoaded", function () {
+  // все элементы
+  const modal = document.getElementById("planModal");
+  const modalClose = document.getElementById("modalClose");
+  const modalCloseBtn = document.getElementById("modalCloseBtn");
+  const modalCategory = document.getElementById("modalCategory");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDescription = document.getElementById("modalDescription");
+  const modalFeatures = document.getElementById("modalFeatures");
+  const modalTags = document.getElementById("modalTags");
+
+  // Функция открытия окна - заполняем данными выбранного курса
+  function openModal(planId) {
+    const plan = plansData[planId];
+
+    if (!plan) return;
+
+    // Заполняем основную информацию о курсе
+    modalCategory.textContent = plan.category;
+    modalTitle.textContent = plan.title;
+    modalDescription.textContent = plan.description;
+
+    // Очищаем список особенностей и добавляем новые
+    modalFeatures.innerHTML = "";
+    for (let i = 0; i < plan.features.length; i++) {
+      const li = document.createElement("li");
+      li.textContent = plan.features[i];
+      modalFeatures.appendChild(li);
+    }
+
+    // Очищаем теги и добавляем новые
+    modalTags.innerHTML = "";
+    plan.tags.forEach(function (tag) {
+      const span = document.createElement("span");
+      span.className = "modal-tag";
+      span.textContent = tag;
+      modalTags.appendChild(span);
+    });
+
+    // Показываем модальное окно и блокируем прокрутку страницы
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
   // Находим все кнопки "Подробнее" и вешаем на них обработчик
   const buttons = document.querySelectorAll(".btn-more");
   buttons.forEach(function (btn) {
