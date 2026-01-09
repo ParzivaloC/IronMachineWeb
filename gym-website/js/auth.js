@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //поля формы по id
   const firstName = document.getElementById('firstName');
-  const lastName  = document.getElementById('lastName');
+  const lastName = document.getElementById('lastName');
   const middleName = document.getElementById('middleName');
   const age = document.getElementById('age');
   const gender = document.getElementById('gender');
@@ -40,19 +40,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (phone) {
-        phone.addEventListener('input', () => {
-            if (!phone.value.startsWith('+')) {
-                phone.value = '+' + phone.value.replace(/\D/g, '');
-                return;
-            }
+    phone.addEventListener('input', () => {
+      if (!phone.value.startsWith('+')) {
+        phone.value = '+' + phone.value.replace(/\D/g, '');
+        return;
+      }
 
-            phone.value = '+' + phone.value.slice(1).replace(/\D/g, '');
-        });
+      phone.value = '+' + phone.value.slice(1).replace(/\D/g, '');
+    });
 
-        phone.addEventListener('focus', () => {
-            if (phone.value === '') phone.value = '+';
-        });
-    }
+    phone.addEventListener('focus', () => {
+      if (phone.value === '') phone.value = '+';
+    });
+  }
 
   function isValidEmail(emailStr) {
     //проверка формата
@@ -71,17 +71,17 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   function clearForm() {
-  if (firstName) firstName.value = '';
-  if (lastName) lastName.value = '';
-  if (middleName) middleName.value = '';
-  if (age) age.value = '';
-  if (gender) gender.value = '';
-  if (height) height.value = '';
-  if (weight) weight.value = '';
-  if (phone) phone.value = '+';
-  if (email) email.value = '';
-  if (formError) formError.textContent = '';
-}
+    if (firstName) firstName.value = '';
+    if (lastName) lastName.value = '';
+    if (middleName) middleName.value = '';
+    if (age) age.value = '';
+    if (gender) gender.value = '';
+    if (height) height.value = '';
+    if (weight) weight.value = '';
+    if (phone) phone.value = '+';
+    if (email) email.value = '';
+    if (formError) formError.textContent = '';
+  }
 
 
   //Открытие модалки регистрации по нажатию кнопки
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       //проверка обязательных полей
-      const requiredOrder = ['firstName','lastName','age','gender','height','weight','phone','email'];
+      const requiredOrder = ['firstName', 'lastName', 'age', 'gender', 'height', 'weight', 'phone', 'email'];
       const missing = requiredOrder.find(key => {
         //для select gender пустая строка - не выбран
         return !user[key] || user[key].length === 0;
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       //проверка формата
       if (!isValidPhone(user.phone)) {
-        if (formError)formError.textContent = 'Неверный формат телефона.';
+        if (formError) formError.textContent = 'Неверный формат телефона.';
         return;
       }
       if (!isValidEmail(user.email)) {
@@ -153,10 +153,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
       if (registerBtn) registerBtn.classList.add('hidden');
-      if (isEditing){
+      if (isEditing) {
         alert('Данные сохранены');
       }
-      else{
+      else {
         alert('Регистарция успешна!');
       }
       //alert('Регистрация успешна!');
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //отображение профиля
   function escapeHtml(s) {
     if (!s) return '';
-    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
   //Отображение данных пользователя в панели профиля НЕ ТРОГАТЬ!!!!!!!!!!!!!!!!!!
   function renderUserInfo() {
@@ -238,8 +238,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (email) email.value = u.email || '';
 
       isEditing = true;
-      if(submitBtn) submitBtn.textContent = 'Сохранить';
-      
+      if (submitBtn) submitBtn.textContent = 'Сохранить';
+
       //Закрытие панели и развёртывание модалки регистрации (в ней пользователь сможет изменить данные)
       if (userPanel) userPanel.classList.add('hidden');
       if (registerModal) registerModal.classList.remove('hidden');
@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   updateHeader();
-//Мисклики для закрытия модалок
+  //Мисклики для закрытия модалок
   window.addEventListener('click', (e) => {
     if (e.target === registerModal) registerModal.classList.add('hidden');
     if (e.target === userPanel) userPanel.classList.add('hidden');

@@ -169,7 +169,7 @@ function openModal(planId) {
 
   // Очищаем теги и добавляем новые
   modalTags.innerHTML = '';
-  plan.tags.forEach(function(tag) {
+  plan.tags.forEach(function (tag) {
     const span = document.createElement('span');
     span.className = 'modal-tag';
     span.textContent = tag;
@@ -187,11 +187,11 @@ function closeModal() {
 }
 
 // Когда страница загрузилась - настраиваем обработчики событий
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Находим все кнопки "Подробнее" и вешаем на них обработчик
   const buttons = document.querySelectorAll('.btn-more');
-  buttons.forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
       e.preventDefault();
       // Берем ID курса из атрибута data-plan
       const planId = btn.getAttribute('data-plan');
@@ -204,13 +204,13 @@ document.addEventListener('DOMContentLoaded', function() {
   modalClose.addEventListener('click', closeModal);
   modalCloseBtn.addEventListener('click', closeModal);
 
-  modal.addEventListener('click', function(e) {
+  modal.addEventListener('click', function (e) {
     if (e.target === modal) {
       closeModal();
     }
   });
 
-  document.addEventListener('keydown', function(e) {
+  document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && modal.classList.contains('active')) {
       closeModal();
     }
