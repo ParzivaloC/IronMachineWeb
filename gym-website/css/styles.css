@@ -50,6 +50,97 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   text-align:center;
   padding-top:20px}
 
+/* Section subtitle base styles */
+.section-subtitle{
+  color:var(--accent);
+  font-size:32px;
+  margin:50px 0 24px;
+  font-weight:700;
+  padding-bottom:12px;
+  border-bottom:2px solid rgba(234,122,58,0.2);
+}
+
+/* Animated title with lines */
+.animated-title{
+  position:relative;
+  margin-bottom:32px;
+  text-align:left;
+  padding-bottom:20px;
+}
+
+.animated-title .section-title,
+.animated-title .section-subtitle{
+  text-align:left;
+  margin-bottom:12px;
+  font-size:42px;
+  font-weight:800;
+  color:#fff;
+  line-height:1.2;
+  letter-spacing:-0.5px;
+  border-bottom:none;
+  padding-bottom:0;
+  margin-bottom:12px;
+}
+
+.animated-title .section-subtitle{
+  color:var(--accent);
+}
+
+.animated-title .section-title.muted{
+  color:rgba(255,255,255,0.15);
+  font-size:48px;
+}
+
+.title-lines{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin-top:12px;
+  position:relative;
+  overflow:hidden;
+}
+
+.title-lines .line{
+  height:3px;
+  background:var(--accent);
+  border-radius:2px;
+  display:block;
+  transform-origin:left center;
+  box-shadow:0 0 8px rgba(234,122,58,0.4);
+}
+
+.title-lines .line-1{
+  width:60px;
+  animation:slideInLine1 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s both;
+}
+
+.title-lines .line-2{
+  width:140px;
+  animation:slideInLine2 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
+}
+
+@keyframes slideInLine1{
+  0%{
+    transform:translateX(-120%) scaleX(0);
+    opacity:0;
+  }
+  100%{
+    transform:translateX(0) scaleX(1);
+    opacity:1;
+  }
+}
+
+@keyframes slideInLine2{
+  0%{
+    transform:translateX(-120%) scaleX(0);
+    opacity:0;
+  }
+  100%{
+    transform:translateX(0) scaleX(1);
+    opacity:1;
+  }
+}
+
 .group-title{color:var(--accent);
   font-size:32px;
   margin:50px 0 24px;
@@ -317,6 +408,15 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   .service-cards{grid-template-columns:repeat(2,1fr)}
   .why-grid{grid-template-columns:1fr}
   .pricing-grid{grid-template-columns:1fr}
+  
+  .animated-title .section-title,
+  .animated-title .section-subtitle{
+    font-size:32px;
+  }
+  
+  .animated-title .section-title.muted{
+    font-size:36px;
+  }
 }
 
 /* FAQ */
