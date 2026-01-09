@@ -1,187 +1,382 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GYM — Наши курсы</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <a class="logo" href="home.html" aria-label="GYM">
-        <img src="assets/Logo.png" alt="GYM logo"/>
-      </a>
-      <nav class="main-nav" aria-label="Главная навигация">
-        <ul>
-          <li><a href="home.html">Главная</a></li>
-          <li><a class="active" href="courses.html">Наши курсы</a></li>
-          <li><a href="reviews.html">Отзывы</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </nav>
-      <a class="btn-register" href="#">Регистрация</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GYM — Наши курсы</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a class="logo" href="home.html" aria-label="GYM">
+          <img src="assets/Logo.png" alt="GYM logo" />
+        </a>
+        <nav class="main-nav" aria-label="Главная навигация">
+          <ul>
+            <li><a href="home.html">Главная</a></li>
+            <li><a class="active" href="courses.html">Наши курсы</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </nav>
+        <a class="btn-register" id="openRegister" href="#">Регистрация</a>
+        <!--Изменил кнопку регистарции, теперь это кнопка)-->
+        <div class="user-avatar hidden" id="userAvatar">A</div>
+      </div>
+    </header>
+
+    <main>
+      <section
+        class="container courses-section"
+        aria-labelledby="courses-heading"
+      >
+        <div class="animated-title">
+          <h2 id="courses-heading" class="section-title">
+            Выберите программу для достижения вашей цели
+          </h2>
+          <div class="title-lines">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+          </div>
+        </div>
+
+        <!-- Группа курсов - план тренировок -->
+        <h3 class="group-title">План тренировок</h3>
+        <div class="cards">
+          <article class="card">
+            <div class="card-media" aria-hidden="true"></div>
+            <div class="card-body">
+              <h4 class="card-title">Для начинающих</h4>
+              <div class="tags">
+                <span class="tag">Для зала</span>
+                <span class="tag">Для новичков</span>
+                <span class="tag">Для дома</span>
+              </div>
+              <p class="card-desc">
+                Идеальная программа для новичков: пошаговое освоение техники,
+                постепенный рост нагрузки и понятная система тренировок.
+              </p>
+              <button
+                class="btn-more"
+                data-plan="training-beginner"
+                data-category="План тренировок"
+                data-title="Для начинающих"
+              >
+                Подробнее →
+              </button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media" aria-hidden="true"></div>
+            <div class="card-body">
+              <h4 class="card-title">Full-Body программа</h4>
+              <div class="tags">
+                <span class="tag">Для зала</span>
+                <span class="tag">Средний уровень</span>
+              </div>
+              <p class="card-desc">
+                Мощная программа тренировок всего тела за три дня. Комплексная
+                проработка мышечных групп с акцентом на силу и рост.
+              </p>
+              <button
+                class="btn-more"
+                data-plan="training-fullbody"
+                data-category="План тренировок"
+                data-title="Full-Body программа"
+              >
+                Подробнее →
+              </button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media" aria-hidden="true"></div>
+            <div class="card-body">
+              <h4 class="card-title">Сплит программа</h4>
+              <div class="tags">
+                <span class="tag">Для зала</span>
+                <span class="tag">Для продвинутых</span>
+              </div>
+              <p class="card-desc">
+                Продвинутая split-программа для серьёзного роста массы. Три
+                интенсивные тренировки в неделю с фокусом на отдельные группы.
+              </p>
+              <button
+                class="btn-more"
+                data-plan="training-split"
+                data-category="План тренировок"
+                data-title="Сплит программа"
+              >
+                Подробнее →
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Группа курсов - план питания -->
+        <h3 class="group-title">План питания</h3>
+        <div class="cards">
+          <article class="card">
+            <div class="card-media" aria-hidden="true"></div>
+            <div class="card-body">
+              <h4 class="card-title">Базовая программа питания</h4>
+              <div class="tags">
+                <span class="tag">Для зала</span
+                ><span class="tag">Для новичков</span>
+              </div>
+              <p class="card-desc">
+                Сбалансированный план питания для начинающих: правильное
+                распределение БЖУ, контроль калорий и основы здорового питания.
+              </p>
+              <button
+                class="btn-more"
+                data-plan="nutrition-basic"
+                data-category="План питания"
+                data-title="Базовая программа питания"
+              >
+                Подробнее →
+              </button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-media" aria-hidden="true"></div>
+            <div class="card-body">
+              <h4 class="card-title">Программа для набора массы</h4>
+              <div class="tags">
+                <span class="tag">Для зала</span
+                ><span class="tag">Средний уровень</span>
+              </div>
+              <p class="card-desc">
+                Специализированный план питания для набора мышечной массы с
+                повышенным содержанием белка и правильным распределением
+                макронутриентов.
+              </p>
+              <button
+                class="btn-more"
+                data-plan="nutrition-mass"
+                data-category="План питания"
+                data-title="Программа для набора массы"
+              >
+                Подробнее →
+              </button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-media" aria-hidden="true"></div>
+            <div class="card-body">
+              <h4 class="card-title">Программа для похудения</h4>
+              <div class="tags">
+                <span class="tag">Для зала</span
+                ><span class="tag">Для новичков</span>
+              </div>
+              <p class="card-desc">
+                Эффективный план питания для снижения веса с дефицитом калорий,
+                поддержанием мышечной массы и ускорением метаболизма.
+              </p>
+              <button
+                class="btn-more"
+                data-plan="nutrition-cut"
+                data-category="План питания"
+                data-title="Программа для похудения"
+              >
+                Подробнее →
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Группа курсов - план восстановления -->
+        <h3 class="group-title">План восстановления</h3>
+        <div class="cards">
+          <article class="card">
+            <div class="card-media" aria-hidden="true"></div>
+            <div class="card-body">
+              <h4 class="card-title">Базовое восстановление</h4>
+              <div class="tags">
+                <span class="tag">Для зала</span
+                ><span class="tag">Для новичков</span>
+              </div>
+              <p class="card-desc">
+                Основы восстановления после тренировок: техники растяжки,
+                базовые упражнения на гибкость и рекомендации по отдыху.
+              </p>
+              <button
+                class="btn-more"
+                data-plan="recovery-basic"
+                data-category="План восстановления"
+                data-title="Базовое восстановление"
+              >
+                Подробнее →
+              </button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-media" aria-hidden="true"></div>
+            <div class="card-body">
+              <h4 class="card-title">Продвинутое восстановление</h4>
+              <div class="tags">
+                <span class="tag">Для зала</span
+                ><span class="tag">Средний уровень</span>
+              </div>
+              <p class="card-desc">
+                Комплексная программа восстановления: миофасциальный релиз,
+                мобильность суставов, техники расслабления и оптимизация сна.
+              </p>
+              <button
+                class="btn-more"
+                data-plan="recovery-advanced"
+                data-category="План восстановления"
+                data-title="Продвинутое восстановление"
+              >
+                Подробнее →
+              </button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-media" aria-hidden="true"></div>
+            <div class="card-body">
+              <h4 class="card-title">Восстановление после травм</h4>
+              <div class="tags">
+                <span class="tag">Для зала</span
+                ><span class="tag">Для новичков</span>
+              </div>
+              <p class="card-desc">
+                Специализированная программа восстановления после травм:
+                реабилитационные упражнения, профилактика и безопасное
+                возвращение к тренировкам.
+              </p>
+              <button
+                class="btn-more"
+                data-plan="recovery-injury"
+                data-category="План восстановления"
+                data-title="Восстановление после травм"
+              >
+                Подробнее →
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="site-footer" role="contentinfo">
+        <div class="container footer-inner">
+          <div class="footer-left">
+            <img src="assets/Logo.png" alt="GYM" />
+            <p>Подпишитесь на наши обновления!</p>
+            <form
+              class="subscribe"
+              action="#"
+              onsubmit="return false;"
+              aria-label="Подписка"
+            >
+              <input type="email" placeholder="Email" aria-label="Email" />
+              <button aria-label="Отправить">→</button>
+            </form>
+          </div>
+          <div class="footer-right">
+            <h4>Свяжитесь с нами</h4>
+            <p>Email: ironmachine@gmail.com</p>
+            <p>Телефон: +7 918 777 77-77</p>
+            <p>Локация: Владикавказ, ул.Куйбышева 126/2</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <div class="modal-overlay" id="planModal">
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose" aria-label="Закрыть">
+          ×
+        </button>
+        <div class="modal-category" id="modalCategory"></div>
+        <h3 class="modal-title" id="modalTitle"></h3>
+        <p class="modal-description" id="modalDescription"></p>
+        <ul class="modal-features" id="modalFeatures"></ul>
+        <div class="modal-tags" id="modalTags"></div>
+        <div class="modal-cta">
+          <a href="#" class="modal-btn">Записаться на курс</a>
+          <button class="modal-btn modal-btn-secondary" id="modalCloseBtn">
+            Закрыть
+          </button>
+        </div>
+      </div>
     </div>
-  </header>
 
-  <main>
-    <section class="container courses-section" aria-labelledby="courses-heading">
-      <div class="animated-title">
-        <h2 id="courses-heading" class="section-title">Выберите программу для достижения вашей цели</h2>
-        <div class="title-lines">
-          <span class="line line-1"></span>
-          <span class="line line-2"></span>
-        </div>
-      </div>
+    <!--Модальное окно для регистрации-->
+    <div class="modal hidden" id="registerModal">
+      <div class="modal-content">
+        <h2>Регистрация</h2>
 
-      <!-- Группа курсов - план тренировок -->
-      <h3 class="group-title">План тренировок</h3>
-      <div class="cards">
-        <article class="card">
-          <div class="card-media" aria-hidden="true"></div>
-          <div class="card-body">
-            <h4 class="card-title">Для начинающих</h4>
-            <div class="tags">
-              <span class="tag">Для зала</span>
-              <span class="tag">Для новичков</span>
-              <span class="tag">Для дома</span>
-            </div>
-            <p class="card-desc">Идеальная программа для новичков: пошаговое освоение техники, постепенный рост нагрузки и понятная система тренировок.</p>
-            <button class="btn-more" data-plan="training-beginner" data-category="План тренировок" data-title="Для начинающих">Подробнее →</button>
-          </div>
-        </article>
+        <form id="registerForm">
+          <input type="text" placeholder="Имя" id="firstName" required />
+          <input type="text" placeholder="Фамилия" id="lastName" required />
+          <input type="text" placeholder="Отчество" id="middleName" />
 
-        <article class="card">
-          <div class="card-media" aria-hidden="true"></div>
-          <div class="card-body">
-            <h4 class="card-title">Full-Body программа</h4>
-            <div class="tags">
-              <span class="tag">Для зала</span>
-              <span class="tag">Средний уровень</span>
-            </div>
-            <p class="card-desc">Мощная программа тренировок всего тела за три дня. Комплексная проработка мышечных групп с акцентом на силу и рост.</p>
-            <button class="btn-more" data-plan="training-fullbody" data-category="План тренировок" data-title="Full-Body программа">Подробнее →</button>
-          </div>
-        </article>
+          <input
+            type="number"
+            placeholder="Возраст"
+            id="age"
+            min="6"
+            max="100"
+            required
+          />
 
-        <article class="card">
-          <div class="card-media" aria-hidden="true"></div>
-          <div class="card-body">
-            <h4 class="card-title">Сплит программа</h4>
-            <div class="tags">
-              <span class="tag">Для зала</span>
-              <span class="tag">Для продвинутых</span>
-            </div>
-            <p class="card-desc">Продвинутая split-программа для серьёзного роста массы. Три интенсивные тренировки в неделю с фокусом на отдельные группы.</p>
-            <button class="btn-more" data-plan="training-split" data-category="План тренировок" data-title="Сплит программа">Подробнее →</button>
-          </div>
-        </article>
-      </div>
+          <select id="gender">
+            <!--required-->
+            <option value="" disabled selected hidden>Пол</option>
+            <option value="Мужской">Мужской</option>
+            <option value="Женский">Женский</option>
+          </select>
 
-      <!-- Группа курсов - план питания -->
-      <h3 class="group-title">План питания</h3>
-      <div class="cards">
-        <article class="card">
-          <div class="card-media" aria-hidden="true"></div>
-          <div class="card-body">
-            <h4 class="card-title">Базовая программа питания</h4>
-            <div class="tags"><span class="tag">Для зала</span><span class="tag">Для новичков</span></div>
-            <p class="card-desc">Сбалансированный план питания для начинающих: правильное распределение БЖУ, контроль калорий и основы здорового питания.</p>
-            <button class="btn-more" data-plan="nutrition-basic" data-category="План питания" data-title="Базовая программа питания">Подробнее →</button>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-media" aria-hidden="true"></div>
-          <div class="card-body">
-            <h4 class="card-title">Программа для набора массы</h4>
-            <div class="tags"><span class="tag">Для зала</span><span class="tag">Средний уровень</span></div>
-            <p class="card-desc">Специализированный план питания для набора мышечной массы с повышенным содержанием белка и правильным распределением макронутриентов.</p>
-            <button class="btn-more" data-plan="nutrition-mass" data-category="План питания" data-title="Программа для набора массы">Подробнее →</button>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-media" aria-hidden="true"></div>
-          <div class="card-body">
-            <h4 class="card-title">Программа для похудения</h4>
-            <div class="tags"><span class="tag">Для зала</span><span class="tag">Для новичков</span></div>
-            <p class="card-desc">Эффективный план питания для снижения веса с дефицитом калорий, поддержанием мышечной массы и ускорением метаболизма.</p>
-            <button class="btn-more" data-plan="nutrition-cut" data-category="План питания" data-title="Программа для похудения">Подробнее →</button>
-          </div>
-        </article>
-      </div>
+          <input type="number" placeholder="Рост (см)" id="height" required />
+          <input type="number" placeholder="Вес (кг)" id="weight" required />
 
-      <!-- Группа курсов - план восстановления -->
-      <h3 class="group-title">План восстановления</h3>
-      <div class="cards">
-        <article class="card">
-          <div class="card-media" aria-hidden="true"></div>
-          <div class="card-body">
-            <h4 class="card-title">Базовое восстановление</h4>
-            <div class="tags"><span class="tag">Для зала</span><span class="tag">Для новичков</span></div>
-            <p class="card-desc">Основы восстановления после тренировок: техники растяжки, базовые упражнения на гибкость и рекомендации по отдыху.</p>
-            <button class="btn-more" data-plan="recovery-basic" data-category="План восстановления" data-title="Базовое восстановление">Подробнее →</button>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-media" aria-hidden="true"></div>
-          <div class="card-body">
-            <h4 class="card-title">Продвинутое восстановление</h4>
-            <div class="tags"><span class="tag">Для зала</span><span class="tag">Средний уровень</span></div>
-            <p class="card-desc">Комплексная программа восстановления: миофасциальный релиз, мобильность суставов, техники расслабления и оптимизация сна.</p>
-            <button class="btn-more" data-plan="recovery-advanced" data-category="План восстановления" data-title="Продвинутое восстановление">Подробнее →</button>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-media" aria-hidden="true"></div>
-          <div class="card-body">
-            <h4 class="card-title">Восстановление после травм</h4>
-            <div class="tags"><span class="tag">Для зала</span><span class="tag">Для новичков</span></div>
-            <p class="card-desc">Специализированная программа восстановления после травм: реабилитационные упражнения, профилактика и безопасное возвращение к тренировкам.</p>
-            <button class="btn-more" data-plan="recovery-injury" data-category="План восстановления" data-title="Восстановление после травм">Подробнее →</button>
-          </div>
-        </article>
-      </div>
-    </section>
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Телефон"
+            value="+"
+            inputmode="numeric"
+          />
 
-    <footer class="site-footer" role="contentinfo">
-      <div class="container footer-inner">
-        <div class="footer-left">
-          <img src="assets/Logo.png" alt="GYM"/>
-          <p>Подпишитесь на наши обновления!</p>
-          <form class="subscribe" action="#" onsubmit="return false;" aria-label="Подписка">
-            <input type="email" placeholder="Email" aria-label="Email" />
-            <button aria-label="Отправить">→</button>
-          </form>
-        </div>
-        <div class="footer-right">
-          <h4>Свяжитесь с нами</h4>
-          <p>Email: ironmachine@gmail.com</p>
-          <p>Телефон: +7 918 777 77-77</p>
-          <p>Локация: Владикавказ, ул.Куйбышева 126/2</p>
-        </div>
-      </div>
-    </footer>
-  </main>
+          <input type="email" placeholder="Email" id="email" required />
 
-  <div class="modal-overlay" id="planModal">
-    <div class="modal-content">
-      <button class="modal-close" id="modalClose" aria-label="Закрыть">×</button>
-      <div class="modal-category" id="modalCategory"></div>
-      <h3 class="modal-title" id="modalTitle"></h3>
-      <p class="modal-description" id="modalDescription"></p>
-      <ul class="modal-features" id="modalFeatures"></ul>
-      <div class="modal-tags" id="modalTags"></div>
-      <div class="modal-cta">
-        <a href="#" class="modal-btn">Записаться на курс</a>
-        <button class="modal-btn modal-btn-secondary" id="modalCloseBtn">Закрыть</button>
+          <div class="modal-actions">
+            <button type="button" class="btn-ghost" id="cancelRegister">
+              Отмена
+            </button>
+            <button type="submit" class="btn-primary" id="submitRegister">
+              Зарегистрироваться
+            </button>
+          </div>
+        </form>
       </div>
     </div>
-  </div>
 
-  <!-- Скрипт для работы модального окна -->
-  <script src="js/courses.js"></script>
-</body>
+    <!--Мини панель пользователя-->
+    <div class="modal hidden" id="userPanel">
+      <div class="modal-content">
+        <h2>Ваш профиль</h2>
+
+        <div id="userInfo"></div>
+
+        <div class="modal-actions">
+          <button class="btn-ghost" id="closePanel">Закрыть</button>
+          <button class="btn-primary" id="editUser">Изменить</button>
+          <button class="btn-ghost" id="logout">Выйти</button>
+        </div>
+      </div>
+    </div>
+    <!-- Скрипт для работы модального окна -->
+    <script src="js/courses.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
 </html>
