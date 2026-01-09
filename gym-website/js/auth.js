@@ -26,6 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const phone = document.getElementById('phone');
   const email = document.getElementById('email');
 
+  //редактирование или новая регистрация
+  let isEditing = false;
+  const submitBtn = document.getElementById('submitRegister');
+
+
   //на всякий случай если модалки каким то чудом сново появятся просто так
   if (registerModal) registerModal.classList.add('hidden');
   if (userPanel) userPanel.classList.add('hidden');
@@ -33,6 +38,21 @@ document.addEventListener('DOMContentLoaded', () => {
   function isValidPhone(phoneStr) {
     return /^\+\d{7,15}$/.test(phoneStr);
   }
+
+  if (phone) {
+        phone.addEventListener('input', () => {
+            if (!phone.value.startsWith('+')) {
+                phone.value = '+' + phone.value.replace(/\D/g, '');
+                return;
+            }
+
+            phone.value = '+' + phone.value.slice(1).replace(/\D/g, '');
+        });
+
+        phone.addEventListener('focus', () => {
+            if (phone.value === '') phone.value = '+';
+        });
+    }
 
   function isValidEmail(emailStr) {
     //проверка формата
@@ -50,11 +70,27 @@ document.addEventListener('DOMContentLoaded', () => {
     email: 'Email'
   };
 
+  function clearForm() {
+  if (firstName) firstName.value = '';
+  if (lastName) lastName.value = '';
+  if (middleName) middleName.value = '';
+  if (age) age.value = '';
+  if (gender) gender.value = '';
+  if (height) height.value = '';
+  if (weight) weight.value = '';
+  if (phone) phone.value = '+';
+  if (email) email.value = '';
+  if (formError) formError.textContent = '';
+}
+
 
   //Открытие модалки регистрации по нажатию кнопки
   if (registerBtn) {
     registerBtn.addEventListener('click', (e) => {
       e.preventDefault();
+      isEditing = false;
+      if (submitBtn) submitBtn.textContent = 'Зарегистрироваться';
+      clearForm();
       if (formError) formError.textContent = '';
       if (registerModal) registerModal.classList.remove('hidden');
     });
@@ -63,6 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (cancelRegister) {
     cancelRegister.addEventListener('click', () => {
       if (registerModal) registerModal.classList.add('hidden');
+
+      isEditing = false;
+      if (submitBtn) submitBtn.textContent = 'Зарегистрироваться';
+      if (formError) formError.textContent = '';
     });
   }
 
@@ -110,7 +150,20 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('user', JSON.stringify(user));
 
       if (registerModal) registerModal.classList.add('hidden');
-      alert('Регистрация успешна!');
+
+
+      if (registerBtn) registerBtn.classList.add('hidden');
+      if (isEditing){
+        alert('Данные сохранены');
+      }
+      else{
+        alert('Регистарция успешна!');
+      }
+      //alert('Регистрация успешна!');
+      isEditing = false;
+      if (submitBtn) submitBtn.textContent = 'Зарегистрироваться';
+
+
       updateHeader();
     });
   }
@@ -160,6 +213,9 @@ document.addEventListener('DOMContentLoaded', () => {
     logoutBtn.addEventListener('click', () => {
       localStorage.removeItem('user'); //удаление сохранённых данных
       if (userPanel) userPanel.classList.add('hidden');
+
+      isEditing = false;
+      if (submitBtn) submitBtn.textContent = 'Зарегистрироваться';
       updateHeader();
     });
   }
@@ -178,26 +234,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (gender) gender.value = u.gender || '';
       if (height) height.value = u.height || '';
       if (weight) weight.value = u.weight || '';
-      //if (phone) phone.value = u.phone || '';
-
-      if (phone) {
-        phone.addEventListener('input', () => {
-            if (!phone.value.startsWith('+')) {
-                phone.value = '+' + phone.value.replace(/\D/g, '');
-                return;
-            }
-
-            phone.value = '+' + phone.value.slice(1).replace(/\D/g, '');
-        });
-
-        phone.addEventListener('focus', () => {
-            if (phone.value === '') phone.value = '+';
-        });
-    }
-
-
+      if (phone) phone.value = u.phone || '';
       if (email) email.value = u.email || '';
 
+      isEditing = true;
+      if(submitBtn) submitBtn.textContent = 'Сохранить';
+      
       //Закрытие панели и развёртывание модалки регистрации (в ней пользователь сможет изменить данные)
       if (userPanel) userPanel.classList.add('hidden');
       if (registerModal) registerModal.classList.remove('hidden');

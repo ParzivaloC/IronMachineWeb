@@ -19,7 +19,7 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   align-items:center;
   gap:24px}
 
-.logo img{height:70px}
+.logo img{height:82px}
 
 .main-nav ul{display:flex;
   gap:18px;
@@ -27,21 +27,28 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   margin:0;
   padding:0}
 
-.main-nav a{color:var(--muted);
+.main-nav a{
+  color:var(--muted);
   text-decoration:none;
-  padding:8px 12px;
-  border-radius:999px}
+  padding:10px 16px;
+  border-radius:999px;
+  font-size: 18px;
+}
 
 .main-nav a.active{color:var(--card);
   font-weight:700;
   background:rgba(255,255,255,0.04)}
 
-.btn-register{margin-left:auto;
+.btn-register{
+  margin-left:auto;
   background:linear-gradient(180deg,var(--accent),var(--accent-dark));
   color:#fff;
-  padding:8px 16px;
+  padding:12px 24px;
   border-radius:20px;
-  text-decoration:none}
+  text-decoration:none;
+  font-size: 18px;
+  font-weight: 600;
+}
 
 .section-title{color:#111; 
   font-size:28px;
@@ -53,10 +60,12 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   font-weight:700}
 
 /* Hero */
-.hero{background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url('../assets/hero.jpg');
+.hero{background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url('../assets/GroupMainBS.png');
   background-size:cover;
   background-position:center;
-  padding:80px 0 60px}
+  background-repeat: no-repeat;
+  padding:80px 0 60px;
+  position: relative;}
 
 .hero-inner{display:flex;
   align-items:center;
@@ -74,49 +83,121 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
 .hero-content .lead{color:rgba(255,255,255,0.85);
   max-width:600px}
 
-.hero-ctas{margin-top:18px;
+.hero-ctas{
+  margin-top:24px;
   display:flex;
-  gap:12px}
+  gap:16px;
+}
 
-.btn-primary{background:linear-gradient(180deg,var(--accent),var(--accent-dark));
+.btn-primary{
+  background:linear-gradient(180deg,var(--accent),var(--accent-dark));
   color:#111;
-  padding:12px 20px;
+  padding:16px 32px;
   border-radius:28px;
   text-decoration:none;
-  font-weight:700}
+  font-weight:700;
+  font-size: 18px;
+  border: 2px solid transparent;
+  transform: all 0.3s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(234, 122, 58, 0.3);
+}
 
-.btn-ghost{background:transparent;
+.btn-ghost{
+  background:transparent;
   border:2px solid rgba(255,255,255,0.06);
   color:#fff;
-  padding:10px 18px;
+  padding:14px 30px;
   border-radius:28px;
-  text-decoration:none}
+  text-decoration:none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
 
-.hero-media{width:420px;
+.btn-ghost:hover {
+  border-color: #fff; /* Белая окантовка при наведении */
+  background: rgba(255, 255, 255, 0.1); /* Легкая заливка при наведении */
+  transform: translateY(-2px);
+}
+
+.hero-media{
+  width:420px;
   height:360px;
   border-radius:14px;
-  background:linear-gradient(180deg,#111,#222)}
+  background:transparent;}
 
 /* Services */
-.services .muted{color:rgba(255,255,255,0.06)}
+.services .muted{
+  color: #fff !important; 
+  font-size: 44px;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  font-weight: 800;
+  text-align: center;
+}
 
-.services-intro{color:var(--accent);
+.services-intro{
+  color:var(--accent);
   font-weight:700;
-  margin-bottom:14px}
+  margin-bottom:14px;
+  text-align: center;
+  font-size: 20px;
+}
 
 .service-cards{display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
   margin-bottom:36px}
 
-.service{background:transparent;
+.service{
+  /*background:transparent;
   color:#fff;
-  text-align:center}
+  text-align:center;*/
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-.service-img{height:120px;
-  background:#111;
-  border-radius:10px;
-  margin-bottom:10px}
+.service-img{
+  height: 160px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  background: #111;
+  position: relative;
+}
+
+.service-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.service:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent);
+  box-shadow: 0 10px 25px rgba(234, 122, 58, 0.15);
+}
+
+.service:hover .service-img img {
+  transform: scale(1.05);
+}
+
+.service h4 {
+  color: #fff;
+  margin: 20px 0 0 0;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+}
 
 /* Why */
 .why-grid{display:grid;
