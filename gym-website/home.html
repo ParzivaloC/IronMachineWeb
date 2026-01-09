@@ -21,7 +21,8 @@
           <li><a href="faq.html">FAQ</a></li>
         </ul>
       </nav>
-      <a class="btn-register" href="#">Регистрация</a>
+      <a class="btn-register" id="openRegister" href="#">Регистрация</a><!--Изменил кнопку регистарции, теперь это кнопка)-->
+      <div class="user-avatar hidden" id="userAvatar">A</div>
     </div>
   </header>
 
@@ -52,15 +53,21 @@
       <p class="services-intro">Раскройте свою лучшую версию с нашим полным спектром фитнес-услуг</p>
       <div class="service-cards">
         <article class="service">
-          <div class="service-img" aria-hidden="true"></div>
+          <div class="service-img" aria-hidden="true">
+            <img src="assets/RectanglePic1.png" alt="">
+          </div>
           <h4>План тренировок</h4>
         </article>
         <article class="service">
-          <div class="service-img" aria-hidden="true"></div>
+          <div class="service-img" aria-hidden="true">
+            <img src="assets/RectanglePic2.png" alt="">
+          </div>
           <h4>План питания</h4>
         </article>
         <article class="service">
-          <div class="service-img" aria-hidden="true"></div>
+          <div class="service-img" aria-hidden="true">
+            <img src="assets/RectanglePic1.png" alt="">
+          </div>
           <h4>План восстановления</h4>
         </article>
       </div>
@@ -165,5 +172,63 @@
       </div>
     </footer>
   </main>
+
+  <!--Модальное окно для регистрации-->
+  <div class="modal hidden" id="registerModal">
+  <div class="modal-content">
+    <h2>Регистрация</h2>
+
+    <form id="registerForm">
+      <input type="text" placeholder="Имя" id="firstName" required>
+      <input type="text" placeholder="Фамилия" id="lastName" required>
+      <input type="text" placeholder="Отчество" id="middleName">
+
+      <input type="number" placeholder="Возраст" id="age" min="6" max="100" required>
+
+      <select id="gender"> <!--required-->
+        <option value="" disabled selected hidden>Пол</option>
+        <option value="Мужской">Мужской</option>
+        <option value="Женский">Женский</option>
+      </select>
+
+      <input type="number" placeholder="Рост (см)" id="height" required>
+      <input type="number" placeholder="Вес (кг)" id="weight" required>
+
+      <input
+      type="tel"
+      id="phone"
+      placeholder="Телефон"
+      value="+"
+      inputmode="numeric"
+      >
+
+      <input type="email" placeholder="Email" id="email" required>
+
+      <div class="form-error" id="formError"></div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-ghost" id="cancelRegister">Отмена</button>
+        <button type="submit" class="btn-primary" id="submitRegister">Зарегистрироваться</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!--Мини панель пользователя-->
+<div class="modal hidden" id="userPanel">
+  <div class="modal-content">
+    <h2>Ваш профиль</h2>
+
+    <div id="userInfo"></div>
+
+    <div class="modal-actions">
+      <button class="btn-ghost" id="closePanel">Закрыть</button>
+      <button class="btn-primary" id="editUser">Изменить</button>
+      <button class="btn-ghost" id="logout">Выйти</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
 </body>
 </html>
