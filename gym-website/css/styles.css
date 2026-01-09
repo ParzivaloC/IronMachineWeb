@@ -425,50 +425,34 @@ body {
 .why-grid {
   display: grid;
   grid-template-columns: 1fr 360px;
-  gap: 24px;
-  align-items: center;
-  margin-bottom: 0;
+  margin-bottom: 30px;
   position: relative;
-  z-index: 1;
-  background: linear-gradient(90deg, transparent 60%, var(--accent) 60%);
-  padding: 40px;
   border-radius: var(--radius);
-  overflow: hidden;
 }
 
 .why-media {
-  height: 260px;
-  background: #111;
+  height: 360px;
   border-radius: 10px;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40%;
-  z-index: 2;
-  display: none;
 }
 
-.why-list {
-  position: relative;
-  z-index: 3;
-  max-width: 55%;
-}
-
-.why-list h4 {
+.why-list h2 {
   color: var(--accent);
+  font-size: 28px;
   margin-top: 0;
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 26px;
   width: 70%;
 }
 
 .why-list ul {
-  color: #cfcfcf;
-  margin: 0;
-  padding-left: 24px;
+  /* margin: 0;
+  padding-left: 24px;*/
   list-style: none;
+  height: 210px;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #cfcfcf;
 }
 
 .why-list li {
@@ -477,6 +461,7 @@ body {
   line-height: 1.6;
   position: relative;
   padding-left: 20px;
+  height: 32px;
 }
 
 .why-list li::before {
@@ -484,7 +469,9 @@ body {
   position: absolute;
   left: 0;
   color: var(--accent);
-  font-size: 12px;
+  font-size: 18px;
+  top:50%;
+  transform: translateY(-55%);
 }
 
 .stats {
@@ -742,7 +729,7 @@ body {
 .footer-inner {
   display: flex;
   gap: 80px;
-  align-items: flex-start;
+  align-items: flex-end;
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 20px;
@@ -823,18 +810,23 @@ body {
 
 .footer-right {
   flex: 1;
+  height: 185px;
+  display: flex;
+  flex-direction: column;
+  gap:12px;
+  justify-content: flex-end;
 }
 
 .footer-right h4 {
   font-size: 24px;
   color: var(--accent);
-  margin: 0 0 24px 0;
+  margin-bottom: 25px;
   font-weight: 700;
 }
 
 .footer-right p {
   font-size: 16px;
-  margin: 12px 0;
+  margin: 0px;
   color: #ddd;
   line-height: 1.6;
 }
