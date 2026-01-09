@@ -233,12 +233,13 @@ body {
 /* Hero */
 .hero {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85)), url('../assets/GroupMainBS.png');
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 80px 0 60px;
   position: relative;
+  z-index: 1;
+  margin-bottom: 0;
 }
 
 .hero-inner {
@@ -324,6 +325,9 @@ body {
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
+  padding: 60px 0;
+  position: relative;
+  z-index: 1;
 }
 
 .services .muted {
@@ -420,33 +424,85 @@ body {
 }
 
 /* Секция "Почему мы" */
+.why {
+  padding: 60px 0;
+  position: relative;
+  z-index: 1;
+}
+
 .why-grid {
   display: grid;
   grid-template-columns: 1fr 360px;
   gap: 24px;
   align-items: center;
-  margin-bottom: 30px
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(90deg, transparent 60%, var(--accent) 60%);
+  padding: 40px;
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 .why-media {
   height: 260px;
   background: #111;
-  border-radius: 10px
+  border-radius: 10px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40%;
+  z-index: 2;
+  display: none;
+}
+
+.why-list {
+  position: relative;
+  z-index: 3;
+  max-width: 55%;
 }
 
 .why-list h4 {
   color: var(--accent);
-  margin-top: 0
+  margin-top: 0;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 26px;
+  width: 70%;
 }
 
 .why-list ul {
-  color: #cfcfcf
+  color: #cfcfcf;
+  margin: 0;
+  padding-left: 24px;
+  list-style: none;
+}
+
+.why-list li {
+  margin-bottom: 50px;
+  font-size: 20px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 20px;
+}
+
+.why-list li::before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 12px;
 }
 
 .stats {
   background: #141414;
-  padding: 16px 0;
-  margin-top: 8px
+  padding: 24px 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+  clear: both;
 }
 
 /* Внутри статистики все цифры в ряд */
@@ -472,28 +528,50 @@ body {
 }
 
 /* Секция с видео */
+.video {
+  padding: 60px 0;
+  position: relative;
+  z-index: 1;
+  clear: both;
+}
+
 .video .video-card {
   background: transparent;
-  padding: 22px 0
+  padding: 22px 0;
+  position: relative;
 }
 
 /* Превью видео */
 .video-thumb {
   height: 260px;
   border-radius: 12px;
-  background: #222
+  background: #222;
+  position: relative;
+  z-index: 1;
 }
 
 .play {
-  position: relative;
-  margin-top: -200px;
-  margin-left: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  margin-top: 0;
+  margin-left: 0;
   background: var(--accent);
   border: 0;
   color: #111;
   padding: 18px 22px;
   border-radius: 50%;
-  font-size: 18px
+  font-size: 18px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.pricing {
+  padding: 60px 0;
+  position: relative;
+  z-index: 1;
+  clear: both;
 }
 
 /* Вводный текст к ценам*/
