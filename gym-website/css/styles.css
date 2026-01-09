@@ -22,8 +22,36 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   align-items:center;
   gap:24px}
 
-.logo img{height:70px}
+/*ЛОГО---------------------------*/
+.logo{
+  position:relative;
+  transition:transform 0.3s ease;
+}
 
+.logo img{
+  height:70px;
+  filter:drop-shadow(0 0 10px rgba(234,122,58,0.3)) drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+  transition:filter 0.3s ease, transform 0.3s ease;
+  animation:fadeInLogo 0.8s ease-out;
+}
+
+/* При наведении логотип немного увеличивается и светится ярче */
+.logo:hover img{
+  filter:drop-shadow(0 0 20px rgba(234,122,58,0.6)) drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+  transform:scale(1.05);
+}
+
+@keyframes fadeInLogo{
+  0%{
+    opacity:0;
+    transform:translateY(-10px) scale(0.9);
+  }
+  100%{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+/*-------------------------------------------*/
 .main-nav ul{display:flex;
   gap:18px;
   list-style:none;
