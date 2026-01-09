@@ -10,6 +10,7 @@
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial;
 }
+
 /* чтоб padding не ломал верстку */
 * {
   box-sizing: border-box;
@@ -72,6 +73,7 @@ body {
     transform: translateY(0) scale(1);
   }
 }
+
 /*-------------------------------------------*/
 .main-nav ul {
   display: flex;
@@ -277,6 +279,7 @@ body {
   border: 2px solid transparent;
   transform: all 0.3s ease;
 }
+
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(234, 122, 58, 0.3);
@@ -295,8 +298,10 @@ body {
 }
 
 .btn-ghost:hover {
-  border-color: #fff; /* Белая окантовка при наведении */
-  background: rgba(255, 255, 255, 0.1); /* Легкая заливка при наведении */
+  border-color: #fff;
+  /* Белая окантовка при наведении */
+  background: rgba(255, 255, 255, 0.1);
+  /* Легкая заливка при наведении */
   transform: translateY(-2px);
 }
 
@@ -308,6 +313,15 @@ body {
 }
 
 /* Services */
+.services {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 60px 0;
+  position: relative;
+  z-index: 1;
+}
+
 .services .muted {
   color: #fff !important;
   font-size: 44px;
@@ -328,28 +342,48 @@ body {
 .service-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 24px;
   margin-bottom: 36px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Фиксируем размеры карточек услуг при любом масштабе */
+@media (min-width: 901px) {
+  .service-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .service {
+    min-width: 0;
+    max-width: 100%;
+  }
 }
 
 .service {
-  /*background:transparent;
-  color:#fff;
-  text-align:center;*/
   background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
+  padding: 24px;
   border-radius: var(--radius);
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .service-img {
-  height: 160px;
+  height: 180px;
+  min-height: 180px;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   overflow: hidden;
   background: #111;
   position: relative;
+  width: 100%;
+  flex-shrink: 0;
 }
 
 .service-img img {
@@ -360,6 +394,7 @@ body {
   display: block;
   transition: transform 0.5s ease;
 }
+
 .service:hover {
   transform: translateY(-8px);
   background: rgba(255, 255, 255, 0.08);
@@ -373,50 +408,93 @@ body {
 
 .service h4 {
   color: #fff;
-  margin: 20px 0 0 0;
-  font-size: 20px;
+  margin: 0;
+  font-size: 24px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 /* Секция "Почему мы" */
-.why-container {
+.why {
+  padding: 60px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.why-grid {
   display: grid;
   grid-template-columns: 1fr 360px;
   gap: 24px;
- 
-  margin-bottom: 30px;
+  align-items: center;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(90deg, transparent 60%, var(--accent) 60%);
+  padding: 40px;
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 .why-media {
-  height: 360px;
-
+  height: 260px;
   background: #111;
   border-radius: 10px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40%;
+  z-index: 2;
+  display: none;
 }
 
-.why-list h2 {
-  width: 70%;
+.why-list {
+  position: relative;
+  z-index: 3;
+  max-width: 55%;
+}
+
+.why-list h4 {
   color: var(--accent);
   margin-top: 0;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 26px;
+  width: 70%;
 }
 
 .why-list ul {
-  height: 210px;
-  font-weight: bold;
-  font-size: 18px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
   color: #cfcfcf;
+  margin: 0;
+  padding-left: 24px;
+  list-style: none;
+}
+
+.why-list li {
+  margin-bottom: 50px;
+  font-size: 20px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 20px;
+}
+
+.why-list li::before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 12px;
 }
 
 .stats {
   background: #141414;
-  padding: 16px 0;
-  margin-top: 8px;
+  padding: 24px 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+  clear: both;
 }
 
 /* Внутри статистики все цифры в ряд */
@@ -458,12 +536,35 @@ body {
   position: relative;
   margin-top: -200px;
   margin-left: 50px;
+  height: 260px;
+  border-radius: 12px;
+  background: #222;
+  position: relative;
+  z-index: 1;
+}
+
+.play {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  margin-top: 0;
+  margin-left: 0;
   background: var(--accent);
   border: 0;
   color: #111;
   padding: 18px 22px;
   border-radius: 50%;
   font-size: 18px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.pricing {
+  padding: 60px 0;
+  position: relative;
+  z-index: 1;
+  clear: both;
 }
 
 /* Вводный текст к ценам*/
@@ -489,41 +590,43 @@ body {
   color: #ddd;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start
 }
 
-/* Цена в карточке - серый и жирный */
 .price-card .price {
   color: #bbb;
-  font-weight: 700;
+  font-weight: 700
 }
 
-/* Выделенная карточка - оранжевая, приподнята вверх */
 .price-card.featured {
   background: linear-gradient(180deg, #ea7a3a, #d5642b);
   color: #111;
-  transform: translateY(-6px);
+  transform: translateY(-6px)
 }
 
-/* Кнопка в карточке цены - внизу */
 .price-card .btn-primary {
-  margin-top: auto;
+  margin-top: auto
 }
 
-/* Секция с курсами - отступы сверху и снизу */
+
 .courses-section {
   padding: 40px 0 60px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-/* Карточки курсов - адаптивная сетка, минимум 300px */
+/* Карточки курсов - адаптивная сетка, минимум 320px, фиксированные размеры */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 28px;
   margin-bottom: 50px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Каждая карточка курса - белая, с тенью */
+/* Каждая карточка курса - белая, с тенью, фиксированная высота */
 .card {
   background: linear-gradient(180deg, #fff, #fff);
   border-radius: var(--radius);
@@ -532,6 +635,11 @@ body {
   flex-direction: column;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 480px;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
 }
 
 /* Верхняя часть карточки - оранжевый градиент */
@@ -580,8 +688,8 @@ body {
 /* Описание в карточке - серый текст */
 .card-desc {
   color: #666;
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 20px;
+  line-height: 1.7;
   flex: 1;
   margin: 0;
 }
@@ -619,68 +727,141 @@ body {
 /* При наведении карточка поднимается вверх */
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4)
 }
 
-/* Подвал сайта - темный фон */
 .site-footer {
-  margin-top: 60px;
-  background: #2b2b2b;
-  padding: 40px 0;
+  margin-top: 80px;
+  background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
+  padding: 60px 0;
   color: #eee;
+  border-top: 2px solid rgba(234, 122, 58, 0.3);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Внутри подвала - две колонки */
 .footer-inner {
   display: flex;
-  gap: 60px;
+  gap: 80px;
   align-items: flex-start;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Логотип в подвале - поменьше и ярче */
+.footer-left {
+  flex: 1;
+}
+
 .footer-left img {
-  height: 50px;
-  filter: brightness(1.1);
-  margin-bottom: 16px;
+  height: 70px;
+  filter: drop-shadow(0 0 15px rgba(234, 122, 58, 0.4)) brightness(1.2);
+  margin-bottom: 24px;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.footer-left img:hover {
+  transform: scale(1.05);
+}
+
+/* Текст подписки */
+.footer-left p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: 600;
 }
 
 /* Форма подписки - поле и кнопка в ряд */
 .subscribe {
   display: flex;
-  gap: 8px;
-  margin-top: 8px;
+  gap: 12px;
+  margin-top: 12px;
 }
 
 /* Поле ввода email */
 .subscribe input {
-  padding: 10px;
-  border-radius: 6px;
-  border: 0;
-  min-width: 220px;
+  padding: 14px 18px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  min-width: 280px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
-/* Кнопка отправки - оранжевая */
+.subscribe input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.subscribe input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Кнопка отправки - оранжевая, больше */
 .subscribe button {
   background: var(--accent);
   border-radius: 8px;
   border: 0;
-  padding: 8px 12px;
+  padding: 14px 24px;
   color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 60px;
+}
+
+.subscribe button:hover {
+  background: var(--accent-dark);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(234, 122, 58, 0.4);
+}
+
+.footer-right {
+  flex: 1;
+}
+
+.footer-right h4 {
+  font-size: 24px;
+  color: var(--accent);
+  margin: 0 0 24px 0;
+  font-weight: 700;
+}
+
+.footer-right p {
+  font-size: 16px;
+  margin: 12px 0;
+  color: #ddd;
+  line-height: 1.6;
 }
 
 /* Адаптивность для планшетов и маленьких экранов */
-@media (max-width: 900px) {
+@media (max-width:900px) {
   .header-inner {
-    padding: 0 10px;
+    padding: 0 10px
   }
+
   .container {
-    padding: 0 16px;
+    padding: 0 16px
   }
+
   /* В подвале колонки друг под другом */
   .footer-inner {
     flex-direction: column;
-    gap: 16px;
+    gap: 40px
+  }
+  
+  .service-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .service {
+    min-height: auto;
   }
 
   /* В баннере контент и картинка друг под другом */
