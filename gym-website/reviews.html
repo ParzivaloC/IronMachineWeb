@@ -1,101 +1,146 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GYM — Отзывы</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <a class="logo" href="home.html" aria-label="GYM">
-        <img src="assets/Logo.png" alt="GYM logo"/>
-      </a>
-      <nav class="main-nav" aria-label="Главная навигация">
-        <ul>
-          <li><a href="home.html">Главная</a></li>
-          <li><a href="courses.html">Наши курсы</a></li>
-          <li><a class="active" href="reviews.html">Отзывы</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </nav>
-      <a class="btn-register" href="#">Регистрация</a>
-    </div>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GYM — Отзывы</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a class="logo" href="home.html" aria-label="GYM">
+          <img src="assets/Logo.png" alt="GYM logo" />
+        </a>
+        <nav class="main-nav" aria-label="Главная навигация">
+          <ul>
+            <li><a href="home.html">Главная</a></li>
+            <li><a href="courses.html">Наши курсы</a></li>
+            <li><a class="active" href="reviews.html">Отзывы</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </nav>
+        <a class="btn-register" href="#">Регистрация</a>
+      </div>
+    </header>
 
-  <main>
-    <section class="container gallery-section">
-      <div class="animated-title">
-        <h2 class="section-title">Наши результаты и достижения</h2>
-        <div class="title-lines">
-          <span class="line line-1"></span>
-          <span class="line line-2"></span>
+    <main>
+      <section class="container gallery-section">
+        <div class="animated-title">
+          <h2 class="section-title">Наши результаты и достижения</h2>
+          <div class="title-lines">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+          </div>
         </div>
-      </div>
-      <!-- Сетка с фотографиями -->
-      <div class="gallery-grid">
-        <div class="g-item big"><img src="assets/galleryMan1.jpg" alt="Фото 1"></div>
-        <div class="g-item small"><img src="assets/galleryWoman1.jpg" alt="Фото 2"></div>
-        <div class="g-item small"><img src="assets/galleryMan2.jpg" alt="Фото 3"></div>
-        <div class="g-item small"><img src="assets/galleryWoman2.jpg" alt="Фото 4"></div>
-        <div class="g-item small"><img src="assets/galleryMan3.jpg" alt="Фото 5"></div>
-        <div class="g-item big"><img src="assets/galleryWoman3.jpg" alt="Фото 6"></div>
-      </div>
-    </section>
-
-    <section class="container testimonials" aria-labelledby="testimonials-heading">
-      <div class="animated-title">
-        <h2 id="testimonials-heading" class="section-title">Что говорят наши клиенты</h2>
-        <div class="title-lines">
-          <span class="line line-1"></span>
-          <span class="line line-2"></span>
+        <!-- Сетка с фотографиями -->
+        <div class="gallery-grid">
+          <div class="g-item big">
+            <img src="assets/galleryMan1.jpg" alt="Фото 1" />
+          </div>
+          <div class="g-item small">
+            <img src="assets/galleryWoman1.jpg" alt="Фото 2" />
+          </div>
+          <div class="g-item small">
+            <img src="assets/galleryMan2.jpg" alt="Фото 3" />
+          </div>
+          <div class="g-item small">
+            <img src="assets/galleryWoman2.jpg" alt="Фото 4" />
+          </div>
+          <div class="g-item small">
+            <img src="assets/galleryMan3.jpg" alt="Фото 5" />
+          </div>
+          <div class="g-item big">
+            <img src="assets/galleryWoman3.jpg" alt="Фото 6" />
+          </div>
         </div>
-      </div>
-      <!-- Список отзывов -->
-      <div class="testimonials-list">
-        <article class="testimonial">
-          <div class="avatar"><img src="assets/user1.jpg" alt="Дарья"></div>
-          <p class="text">Понравился план питания, за пол года минус 9 кг! Подписка не из дешёвых, но стоит того.</p>
-          <div class="meta"><strong>Дарья</strong><span class="role">Ученик</span></div>
-          <div class="stars">★★★★★</div>
-        </article>
+      </section>
 
-        <article class="testimonial">
-          <div class="avatar"><img src="assets/user2.jpg" alt="Анастасия"></div>
-          <p class="text">Прошла план тренировок, результаты бомбические — выгляжу и чувствую себя лучше.</p>
-          <div class="meta"><strong>Анастасия</strong><span class="role">Ученик</span></div>
-          <div class="stars">★★★★★</div>
-        </article>
-
-        <article class="testimonial">
-          <div class="avatar"><img src="assets/zapas2.jpg" alt="Амридин"></div>
-          <p class="text">Купил курс и немного удивлён результатом — рекомендую тренера Артура.</p>
-          <div class="meta"><strong>Артур</strong><span class="role">Ученик</span></div>
-          <div class="stars">★★★★★</div>
-        </article>
-      </div>
-    </section>
-
-    <footer class="site-footer" role="contentinfo">
-      <div class="container footer-inner">
-        <div class="footer-left">
-          <img src="assets/Logo.png" alt="GYM"/>
-          <p>Подпишитесь на наши обновления!</p>
-          <form class="subscribe" action="#" onsubmit="return false;" aria-label="Подписка">
-            <input type="email" placeholder="Email" aria-label="Email" />
-            <button aria-label="Отправить">→</button>
-          </form>
+      <section
+        class="container testimonials"
+        aria-labelledby="testimonials-heading"
+      >
+        <div class="animated-title">
+          <h2 id="testimonials-heading" class="section-title">
+            Что говорят наши клиенты
+          </h2>
+          <div class="title-lines">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+          </div>
         </div>
-        <div class="footer-right">
-          <h4>Свяжитесь с нами</h4>
-          <p>Email: ironmachine@gmail.com</p>
-          <p>Телефон: +7 918 777 77-77</p>
-          <p>Локация: Владикавказ, ул.Куйбышева 126/2</p>
+        <!-- Список отзывов -->
+        <div class="testimonials-list">
+          <article class="testimonial">
+            <div class="avatar"><img src="assets/user1.jpg" alt="Дарья" /></div>
+            <p class="text">
+              Понравился план питания, за пол года минус 9 кг! Подписка не из
+              дешёвых, но стоит того.
+            </p>
+            <div class="meta">
+              <strong>Дарья</strong><span class="role">Ученик</span>
+            </div>
+            <div class="stars">★★★★★</div>
+          </article>
+
+          <article class="testimonial">
+            <div class="avatar">
+              <img src="assets/user2.jpg" alt="Анастасия" />
+            </div>
+            <p class="text">
+              Прошла план тренировок, результаты бомбические — выгляжу и
+              чувствую себя лучше.
+            </p>
+            <div class="meta">
+              <strong>Анастасия</strong><span class="role">Ученик</span>
+            </div>
+            <div class="stars">★★★★★</div>
+          </article>
+
+          <article class="testimonial">
+            <div class="avatar">
+              <img src="assets/zapas2.jpg" alt="Амридин" />
+            </div>
+            <p class="text">
+              Купил курс и немного удивлён результатом — рекомендую тренера
+              Артура.
+            </p>
+            <div class="meta">
+              <strong>Артур</strong><span class="role">Ученик</span>
+            </div>
+            <div class="stars">★★★★★</div>
+          </article>
         </div>
-      </div>
-    </footer>
-  </main>
-</body>
+      </section>
+
+      <footer class="site-footer" role="contentinfo">
+        <div class="container footer-inner">
+          <div class="footer-left">
+            <img src="assets/Logo.png" alt="GYM" />
+            <p>Подпишитесь на наши обновления!</p>
+            <form
+              class="subscribe"
+              action="#"
+              onsubmit="return false;"
+              aria-label="Подписка"
+            >
+              <input type="email" placeholder="Email" aria-label="Email" />
+              <button aria-label="Отправить">→</button>
+            </form>
+          </div>
+          <div class="footer-right">
+            <h4>Свяжитесь с нами</h4>
+            <p>Email: ironmachine@gmail.com</p>
+            <p>Телефон: +7 918 777 77-77</p>
+            <p>Локация: Владикавказ, ул.Куйбышева 126/2</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script src="js/auth.js"></script>
+  </body>
 </html>
