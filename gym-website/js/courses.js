@@ -1,3 +1,4 @@
+// Здесь хранятся все данные о курсах - описание, особенности, теги
 const plansData = {
   'training-beginner': {
     category: 'План тренировок',
@@ -137,6 +138,7 @@ const plansData = {
   }
 };
 
+// все элементы
 const modal = document.getElementById('planModal');
 const modalClose = document.getElementById('modalClose');
 const modalCloseBtn = document.getElementById('modalCloseBtn');
@@ -146,14 +148,18 @@ const modalDescription = document.getElementById('modalDescription');
 const modalFeatures = document.getElementById('modalFeatures');
 const modalTags = document.getElementById('modalTags');
 
+// Функция открытия окна - заполняем данными выбранного курса
 function openModal(planId) {
   const plan = plansData[planId];
+
   if (!plan) return;
 
+  // Заполняем основную информацию о курсе
   modalCategory.textContent = plan.category;
   modalTitle.textContent = plan.title;
   modalDescription.textContent = plan.description;
 
+  // Очищаем список особенностей и добавляем новые
   modalFeatures.innerHTML = '';
   for (let i = 0; i < plan.features.length; i++) {
     const li = document.createElement('li');
@@ -161,6 +167,7 @@ function openModal(planId) {
     modalFeatures.appendChild(li);
   }
 
+  // Очищаем теги и добавляем новые
   modalTags.innerHTML = '';
   plan.tags.forEach(function(tag) {
     const span = document.createElement('span');
@@ -169,6 +176,7 @@ function openModal(planId) {
     modalTags.appendChild(span);
   });
 
+  // Показываем модальное окно и блокируем прокрутку страницы
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
@@ -178,11 +186,14 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
+// Когда страница загрузилась - настраиваем обработчики событий
 document.addEventListener('DOMContentLoaded', function() {
+  // Находим все кнопки "Подробнее" и вешаем на них обработчик
   const buttons = document.querySelectorAll('.btn-more');
   buttons.forEach(function(btn) {
     btn.addEventListener('click', function(e) {
       e.preventDefault();
+      // Берем ID курса из атрибута data-plan
       const planId = btn.getAttribute('data-plan');
       if (planId) {
         openModal(planId);

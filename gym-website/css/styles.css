@@ -1,3 +1,4 @@
+/* Тут хранятся все основные цвета и настройки сайта, чтобы потом легко менять */
 :root{
   --bg:#050505;
   --muted:#bfbfbf;
@@ -8,11 +9,13 @@
   --radius:12px;
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
+/* чтоб padding не ломал верстку */
 *{box-sizing:border-box}
+/* Базовые настройки для всей страницы */
 body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, sans-serif}
+/* Контейнер который центрирует контент и ограничивает ширину */
 .container{max-width:var(--container);margin:0 auto;padding:0 20px}
 
-/* Header */
 .site-header{padding:18px 0}
 
 .header-inner{display:flex;
@@ -50,7 +53,6 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   text-align:center;
   padding-top:20px}
 
-/* Section subtitle base styles */
 .section-subtitle{
   color:var(--accent);
   font-size:32px;
@@ -60,7 +62,7 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   border-bottom:2px solid rgba(234,122,58,0.2);
 }
 
-/* Animated title with lines */
+/* Контейнер для заголовка с анимициями */
 .animated-title{
   position:relative;
   margin-bottom:32px;
@@ -68,6 +70,7 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   padding-bottom:20px;
 }
 
+/*Заголовки внутри анимированного блока*/
 .animated-title .section-title,
 .animated-title .section-subtitle{
   text-align:left;
@@ -82,6 +85,7 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   margin-bottom:12px;
 }
 
+/* Подзаголовок в анимированном блоке */
 .animated-title .section-subtitle{
   color:var(--accent);
 }
@@ -90,6 +94,7 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   color:rgba(255,255,255,0.15);
   font-size:48px;
 }
+
 
 .title-lines{
   display:flex;
@@ -109,16 +114,21 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   box-shadow:0 0 8px rgba(234,122,58,0.4);
 }
 
+/* Первая линия - короткая, появляется первой */
 .title-lines .line-1{
   width:60px;
   animation:slideInLine1 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s both;
 }
 
+/* Вторая линия - длиннее, появляется с задержкой */
 .title-lines .line-2{
   width:140px;
   animation:slideInLine2 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
 }
 
+
+
+/* Анимация для первой линии - выезжает слева */
 @keyframes slideInLine1{
   0%{
     transform:translateX(-120%) scaleX(0);
@@ -130,6 +140,7 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   }
 }
 
+/* Анимация для второй линии - тоже выезжает слева, но позже */
 @keyframes slideInLine2{
   0%{
     transform:translateX(-120%) scaleX(0);
@@ -141,6 +152,8 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   }
 }
 
+
+
 .group-title{color:var(--accent);
   font-size:32px;
   margin:50px 0 24px;
@@ -148,7 +161,6 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   padding-bottom:12px;
   border-bottom:2px solid rgba(234,122,58,0.2)}
 
-/* Hero */
 .hero{background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url('../assets/hero.jpg');
   background-size:cover;
   background-position:center;
@@ -165,15 +177,19 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   line-height:1.02;
   margin:0 0 12px}
 
+/* Акцентное слово в заголовке - оранжевое */
 .hero-content h1 .accent{color:var(--accent)}
 
+/* Подзаголовок под главным заголовком */
 .hero-content .lead{color:rgba(255,255,255,0.85);
   max-width:600px}
 
+/* Кнопки под текстом - в ряд */
 .hero-ctas{margin-top:18px;
   display:flex;
   gap:12px}
 
+/* Основная кнопка - с градиентом, оранжевая */
 .btn-primary{background:linear-gradient(180deg,var(--accent),var(--accent-dark));
   color:#111;
   padding:12px 20px;
@@ -181,6 +197,7 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   text-decoration:none;
   font-weight:700}
 
+/* Прозрачная кнопка - только рамка */
 .btn-ghost{background:transparent;
   border:2px solid rgba(255,255,255,0.06);
   color:#fff;
@@ -193,9 +210,10 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   border-radius:14px;
   background:linear-gradient(180deg,#111,#222)}
 
-/* Services */
+/* Секция с услугами */
 .services .muted{color:rgba(255,255,255,0.06)}
 
+/* Вводный текст к услугам - оранжевый */
 .services-intro{color:var(--accent);
   font-weight:700;
   margin-bottom:14px}
@@ -214,7 +232,7 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   border-radius:10px;
   margin-bottom:10px}
 
-/* Why */
+/* Секция "Почему мы" */
 .why-grid{display:grid;
   grid-template-columns:1fr 360px;
   gap:24px;
@@ -230,27 +248,30 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
 
 .why-list ul{color:#cfcfcf}
 
-/* Stats */
 .stats{background:#141414;
   padding:16px 0;
   margin-top:8px}
 
+/* Внутри статистики все цифры в ряд */
 .stats-inner{display:flex;
   gap:12px;
   justify-content:space-between;
   align-items:center}
 
+/* Каждая цифра статистики */
 .stat{color:#ddd;text-align:center;
   padding:8px 10px}
 
+/* Сама цифра - большая и оранжевая */
 .stat strong{display:block;
   color:var(--accent);
   font-size:22px}
 
-/* Video */
+/* Секция с видео */
 .video .video-card{background:transparent;
   padding:22px 0}
 
+/* Превью видео */
 .video-thumb{height:260px;
   border-radius:12px;
   background:#222}
@@ -265,16 +286,18 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   border-radius:50%;
   font-size:18px}
 
-/* Pricing */
+/* Вводный текст к ценам*/
 .pricing-intro{color:var(--accent);
   font-weight:700;
   margin-bottom:12px}
 
+/* Карточки с ценами - три в ряд */
 .pricing-grid{display:grid;
   grid-template-columns:1fr 1fr 1fr;
   gap:18px;
   margin-bottom:40px}
 
+/* Каждая карточка с ценой */
 .price-card{background:#1b1b1b;
   border-radius:12px;
   padding:18px;
@@ -283,23 +306,29 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   flex-direction:column;
   align-items:flex-start}
 
+/* Цена в карточке - серый и жирный */
 .price-card .price{color:#bbb;
   font-weight:700}
 
+/* Выделенная карточка - оранжевая, приподнята вверх */
 .price-card.featured{background:linear-gradient(180deg,#ea7a3a,#d5642b);
   color:#111;
   transform:translateY(-6px)}
 
+/* Кнопка в карточке цены - внизу */
 .price-card .btn-primary{margin-top:auto}
 
 
+/* Секция с курсами - отступы сверху и снизу */
 .courses-section{padding:40px 0 60px}
 
+/* Карточки курсов - адаптивная сетка, минимум 300px */
 .cards{display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
   gap:28px;
   margin-bottom:50px}
 
+/* Каждая карточка курса - белая, с тенью */
 .card{background:linear-gradient(180deg,#fff,#fff);
   border-radius:var(--radius);
   overflow:hidden;
@@ -308,27 +337,32 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   box-shadow:0 8px 24px rgba(0,0,0,0.3);
   transition:transform 0.3s ease, box-shadow 0.3s ease}
 
+/* Верхняя часть карточки - оранжевый градиент */
 .card-media{background:var(--accent);
   height:180px;
   background:linear-gradient(135deg, var(--accent), var(--accent-dark))}
 
+/* Тело карточки - контент внутри */
 .card-body{padding:24px;
   flex:1;
   display:flex;
   flex-direction:column;
   gap:12px}
 
+/* Заголовок карточки - черный и жирный */
 .card-title{margin:0;
   color:#111;
   font-size:20px;
   font-weight:700;
   line-height:1.3}
 
+/* Теги под заголовком - в ряд, переносятся если не влезают */
 .tags{display:flex;
   gap:8px;
   margin:0;
   flex-wrap:wrap}
 
+/* Каждый тег - фиолетовый, скругленный */
 .tag{background:#f1efff;
   color:#6b4fb3;
   padding:6px 12px;
@@ -336,12 +370,14 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   font-size:12px;
   font-weight:600}
 
+/* Описание в карточке - серый текст */
 .card-desc{color:#666;
-  font-size:15px;
+  font-size:18px;
   line-height:1.6;
   flex:1;
   margin:0}
 
+/* Кнопка "Подробнее" - оранжевая, внизу карточки */
 .btn-more{display:inline-block;
   margin-top:auto;
   background:var(--accent);
@@ -356,59 +392,74 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   font-size:14px;
   width:fit-content}
 
+/* При наведении кнопка темнеет и сдвигается вправо */
 .btn-more:hover{background:var(--accent-dark);
   transform:translateX(4px)}
 
+/* Фокус на кнопке - оранжевая рамка для доступности */
 .btn-more:focus,.btn-register:focus{outline:3px solid rgba(234,122,58,0.4);
   outline-offset:3px}
 
+/* При наведении карточка поднимается вверх */
 .card:hover{transform:translateY(-8px);
   box-shadow:0 12px 32px rgba(0,0,0,0.4)}
 
+/* Подвал сайта - темный фон */
 .site-footer{margin-top:60px;
   background:#2b2b2b;
   padding:40px 0;
   color:#eee}
 
+/* Внутри подвала - две колонки */
 .footer-inner{display:flex;
   gap:60px;
   align-items:flex-start}
 
+/* Логотип в подвале - поменьше и ярче */
 .footer-left img{height:50px;
   filter:brightness(1.1);
   margin-bottom:16px;
   display:block}
 
+/* Форма подписки - поле и кнопка в ряд */
 .subscribe{display:flex;
   gap:8px;
   margin-top:8px}
 
+/* Поле ввода email */
 .subscribe input{padding:10px;
   border-radius:6px;
   border:0;
   min-width:220px}
 
+/* Кнопка отправки - оранжевая */
 .subscribe button{background:var(--accent);
   border-radius:8px;
   border:0;
   padding:8px 12px;
   color:#fff}
 
-/* Responsive tweaks */
+/* Адаптивность для планшетов и маленьких экранов */
 @media (max-width:900px){
   .header-inner{padding:0 10px}
   .container{padding:0 16px}
+  /* В подвале колонки друг под другом */
   .footer-inner{flex-direction:column;
     gap:16px}
 
+  /* В баннере контент и картинка друг под другом */
   .hero-inner{flex-direction:column}
   .hero-media{width:100%;
     height:220px}
 
+  /* Карточки услуг - две в ряд вместо трех */
   .service-cards{grid-template-columns:repeat(2,1fr)}
+  /* Секция "Почему мы" - одна колонка */
   .why-grid{grid-template-columns:1fr}
+  /* Цены - одна колонка */
   .pricing-grid{grid-template-columns:1fr}
   
+  /* Заголовки поменьше на мобильных */
   .animated-title .section-title,
   .animated-title .section-subtitle{
     font-size:32px;
@@ -419,12 +470,14 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   }
 }
 
-/* FAQ */
+/* Секция FAQ - часто задаваемые вопросы */
 .faq-section{padding:48px 0 80px}
+/* Каждый вопрос - с оранжевой линией снизу */
 .faq-list details{background:transparent;
   border-bottom:2px solid var(--accent);
   padding:18px 0}
 
+/* Заголовок вопроса - кликабельный */
 .faq-list summary{list-style:none;
   cursor:pointer;
   display:flex;
@@ -434,46 +487,58 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   color:#fff;
   font-size:18px}
 
+/* Убираем стандартную стрелку */
 .faq-list summary::-webkit-details-marker{display:none}
 
+/* Номер вопроса - полупрозрачный */
 .faq-list .num{color:rgba(255,255,255,0.25);
   font-weight:700;
   margin-right:6px}
 
+/* Плюсик справа - оранжевый, меняется на минус при открытии */
 .faq-list summary::after{content:"+";
   margin-left:auto;
   color:var(--accent);
   font-weight:900}
 
+/* Когда открыт - показываем минус */
 .faq-list details[open] summary::after{content:"—"}
 
+/* Ответ на вопрос - серый текст */
 .faq-list .answer{padding:12px 0 6px;color:#cfcfcf}
 
-/* Gallery & testimonials */
+/* Галерея и отзывы */
 .gallery-section{padding-top:28px;
   padding-bottom:12px}
 
+/* Сетка галереи - большие и маленькие фото */
 .gallery-grid{display:grid;
   grid-template-columns:2fr 1fr 1fr;
   grid-auto-rows:120px;
   gap:12px}
 
+/* Картинки в галерее - заполняют ячейку, обрезаются по центру */
 .gallery-grid .g-item img{width:100%;
   height:100%;
   object-fit:cover;
   border-radius:10px;
   display:block}
 
+/* Большие фото - занимают две строки */
 .gallery-grid .big{grid-row:1 / span 2}
 
+/* Маленькие фото - одна строка */
 .gallery-grid .small{height:100%}
 
+/* Секция с отзывами */
 .testimonials{padding:36px 0}
 
+/* Список отзывов - три в ряд */
 .testimonials-list{display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:20px}
 
+/* Каждый отзыв */
 .testimonial{background:transparent;
   color:#ddd;
   padding:18px;
@@ -494,25 +559,26 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
 .stars{color:var(--accent);
   font-weight:700}
 
+/* На средних экранах галерея и отзывы в две колонки */
 @media (max-width:900px){
   .gallery-grid{grid-template-columns:1fr 1fr}
   .gallery-grid .big{grid-row:auto}
   .testimonials-list{grid-template-columns:1fr}
 }
 
-
+/* На маленьких экранах - скрываем меню, уменьшаем карточки */
 @media (max-width:540px){
   .main-nav ul{display:none}
   .btn-register{margin-left:8px}
   .card-media{height:140px}
 }
 
-
-
+/* На очень маленьких экранах - FAQ поменьше */
 @media (max-width:640px){
   .faq-list summary{font-size:16px}
 }
 
+/* Оверлей модального окна - темный фон на весь экран */
 .modal-overlay{position:fixed;
   top:0;
   left:0;
@@ -528,9 +594,11 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   transition:opacity 0.3s ease, visibility 0.3s ease;
   padding:20px}
 
+/* Когда модалка активна - показываем */
 .modal-overlay.active{opacity:1;
   visibility:visible}
 
+/* Само модальное окно - темное, с рамкой */
 .modal-content{background:#1b1b1b;
   border-radius:16px;
   padding:32px;
@@ -544,8 +612,10 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   box-shadow:0 20px 60px rgba(0,0,0,0.5);
   border:1px solid rgba(234,122,58,0.2)}
 
+/* Когда открыта - увеличиваем до нормального размера */
 .modal-overlay.active .modal-content{transform:scale(1)}
 
+/* Кнопка закрытия - крестик справа вверху */
 .modal-close{position:absolute;
   top:16px;
   right:16px;
@@ -562,14 +632,17 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   border-radius:50%;
   transition:background 0.2s ease}
 
+/* При наведении на крестик - легкий фон */
 .modal-close:hover{background:rgba(255,255,255,0.1)}
 
+/* Заголовок в модалке - оранжевый */
 .modal-title{color:var(--accent);
   font-size:28px;
   font-weight:700;
   margin:0 0 20px;
   padding-right:40px}
 
+/* Категория курса - серый, маленькими буквами */
 .modal-category{color:rgba(255,255,255,0.6);
   font-size:14px;
   text-transform:uppercase;
@@ -577,15 +650,18 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   margin-bottom:8px;
   font-weight:600}
 
+/* Описание курса */
 .modal-description{color:#ddd;
   font-size:16px;
   line-height:1.7;
   margin-bottom:24px}
 
+/* Список особенностей - без стандартных маркеров */
 .modal-features{list-style:none;
   padding:0;
   margin:0 0 24px}
 
+/* Каждая особенность - с галочкой слева */
 .modal-features li{color:#cfcfcf;
   font-size:15px;
   padding:12px 0;
@@ -594,8 +670,10 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   line-height:1.6;
   border-bottom:1px solid rgba(255,255,255,0.05)}
 
+/* Последний пункт без линии снизу */
 .modal-features li:last-child{border-bottom:none}
 
+/* Галочка перед каждым пунктом - оранжевая */
 .modal-features li::before{content:"✓";
   position:absolute;
   left:0;
@@ -603,11 +681,13 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   font-weight:700;
   font-size:18px}
 
+/* Теги в модалке - в ряд */
 .modal-tags{display:flex;
   gap:8px;
   flex-wrap:wrap;
   margin-bottom:24px}
 
+/* Каждый тег - оранжевый фон, прозрачный */
 .modal-tag{background:rgba(234,122,58,0.15);
   color:var(--accent);
   padding:6px 12px;
@@ -615,10 +695,12 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   font-size:12px;
   font-weight:600}
 
+/* Кнопки в модалке - в ряд */
 .modal-cta{display:flex;
   gap:12px;
   margin-top:24px}
 
+/* Основная кнопка - оранжевая */
 .modal-btn{background:var(--accent);
   color:#fff;
   padding:12px 24px;
@@ -630,15 +712,19 @@ body{margin:0;background:var(--bg);color:#eaeaea;font-family:Inter, system-ui, s
   transition:background 0.3s ease;
   font-size:14px}
 
+/* При наведении темнеет */
 .modal-btn:hover{background:var(--accent-dark)}
 
+/* Вторичная кнопка - только рамка */
 .modal-btn-secondary{background:transparent;
   border:2px solid rgba(255,255,255,0.2);
   color:#fff}
 
+/* При наведении - легкий фон */
 .modal-btn-secondary:hover{background:rgba(255,255,255,0.1);
   border-color:rgba(255,255,255,0.3)}
 
+/* На мобильных модалка и карточки в одну колонку ??????????*/
 @media (max-width:640px){
   .modal-content{padding:24px;
     max-height:95vh}
