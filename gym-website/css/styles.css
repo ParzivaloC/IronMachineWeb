@@ -1008,6 +1008,7 @@ body {
 /* Ответ на вопрос - серый текст */
 .faq-list .answer {
   padding: 12px 0 6px;
+  padding-left: 45px;
   color: #cfcfcf;
 }
 
