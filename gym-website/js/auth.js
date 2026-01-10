@@ -48,16 +48,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const fieldLabels = {
-    firstName: "Имя",
-    lastName: "Фамилия",
-    age: "Возраст",
-    gender: "Пол",
-    height: "Рост",
-    weight: "Вес",
-    phone: "Телефон",
-    email: "Email",
-  };
+  // const fieldLabels = {
+  //   firstName: "Имя",
+  //   lastName: "Фамилия",
+  //   age: "Возраст",
+  //   gender: "Пол",
+  //   height: "Рост",
+  //   weight: "Вес",
+  //   phone: "Телефон",
+  //   email: "Email",
+  // };
 
   function clearForm() {
     firstName.value = "";
@@ -208,4 +208,37 @@ document.addEventListener("DOMContentLoaded", () => {
       if (userPanel) userPanel.classList.add("hidden");
     }
   });
+
+//Логика для кнопок Купить План//
+function isLoggedIn() {
+  return !!localStorage.getItem('user');
+}
+
+document.querySelectorAll('.buy-plan').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();//чтобы не переходить сразу по href
+
+    if (isLoggedIn()) {
+      const href = link.getAttribute('href') || 'courses.html';
+      window.location.href = href;
+    } else {
+      isEditing = false;
+      if (submitBtn) submitBtn.textContent = 'Зарегистрироваться';//меняет текст кнопки
+      if (typeof clearForm === 'function') clearForm();
+      if (registerModal) registerModal.classList.remove('hidden');//открывает окно регистарции
+    }
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
 });

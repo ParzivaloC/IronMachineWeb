@@ -6,7 +6,7 @@
   --accent: #ea7a3a;
   --accent-dark: #d5642b;
   --container: 1509px; /*было 1100px*/
-  --radius: 12px;
+  --radius: 15px;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial;
 }
@@ -14,6 +14,8 @@
 /* чтоб padding не ломал верстку */
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 /* Базовые настройки для всей страницы */
 body {
@@ -77,7 +79,7 @@ body {
 /*-------------------------------------------*/
 .main-nav ul {
   display: flex;
-  gap: 18px;
+  gap: 40px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -88,13 +90,20 @@ body {
   text-decoration: none;
   padding: 10px 16px;
   border-radius: 999px;
-  font-size: 18px;
-}
+  font-size: 20px;
 
+  display: inline-block;
+  transition: transform 160ms ease;
+  transition: text-shadow 160ms ease;
+}
+.main-nav a:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 0 6px rgba(255, 140, 0, 0.645), 0 0 12px rgba(255, 140, 0, 0.485);
+}
 .main-nav a.active {
   color: var(--card);
   font-weight: 700;
-  background: rgba(255, 255, 255, 0.04);
+  /*background: rgba(255, 255, 255, 0.04);*/
 }
 
 .btn-register {
@@ -106,8 +115,13 @@ body {
   text-decoration: none;
   font-size: 18px;
   font-weight: 600;
-}
 
+  display: inline-block;
+  transition: transform 160ms ease;
+}
+.btn-register:hover {
+  transform: translateY(-3px);
+}
 .section-title {
   color: #fff;
   font-size: 36px;
@@ -139,7 +153,7 @@ body {
 .animated-title .section-subtitle {
   text-align: left;
   margin-bottom: 12px;
-  font-size: 42px;
+  font-size: 50px;
   font-weight: 800;
   color: #fff;
   line-height: 1.2;
@@ -156,7 +170,7 @@ body {
 
 .animated-title .section-title.muted {
   color: rgba(255, 255, 255, 0.15);
-  font-size: 48px;
+  font-size: 50px;
 }
 
 .title-lines {
@@ -246,7 +260,7 @@ body {
 }
 
 .hero-content h1 {
-  font-size: 44px;
+  font-size: 50px;
   line-height: 1.02;
   margin: 0 0 12px;
   max-width: 600px;
@@ -261,22 +275,23 @@ body {
 .hero-content .lead {
   color: rgba(255, 255, 255, 0.85);
   max-width: 600px;
+  font-size: 20px;
 }
 
 .hero-ctas {
-  margin-top: 24px;
+  margin-top: 26px;
   display: flex;
-  gap: 16px;
+  gap: 20px;
 }
 
 .btn-primary {
   background: linear-gradient(180deg, var(--accent), var(--accent-dark));
   color: #111;
-  padding: 12px 28px;
+  padding: 14px 30px;
   border-radius: 28px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
   border: 2px solid transparent;
   transform: all 0.3s ease;
 }
@@ -436,7 +451,7 @@ body {
 
 .why-list h2 {
   color: var(--accent);
-  font-size: 28px;
+  font-size: 44px;
   margin-top: 0;
   width: 70%;
 }
@@ -489,6 +504,7 @@ body {
   gap: 12px;
   justify-content: space-between;
   align-items: center;
+  font-size: 20px;
 }
 
 /* Каждая цифра статистики */
@@ -502,7 +518,7 @@ body {
 .stat strong {
   display: block;
   color: var(--accent);
-  font-size: 22px;
+  font-size: 26px;
 }
 
 /* Секция с видео */
@@ -551,7 +567,7 @@ body {
 .pricing {
   padding: 60px 0;
   position: relative;
-  z-index: 1;
+  z-index: 1;/*Зачем этот з индекс?*/
   clear: both;
 }
 
@@ -559,12 +575,14 @@ body {
 .pricing-intro {
   color: var(--accent);
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 70px;
+  font-size: 44px
 }
 
 /* Карточки с ценами - три в ряд */
 .pricing-grid {
   display: grid;
+  align-items: center;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 18px;
   margin-bottom: 40px;
@@ -572,30 +590,79 @@ body {
 
 /* Каждая карточка с ценой */
 .price-card {
-  background: #1b1b1b;
-  border-radius: 12px;
-  padding: 18px;
-  color: #ddd;
+  height: 570px;
+  min-width: fit-content;
+  background: rgba(255, 255, 255, 0.776);
+  color: black;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start
+  transition: all 0.3s ease;
+  /* justify-content: space-between; */
+  padding: 36px 24px;
 }
-
-.price-card .price {
-  color: #bbb;
-  font-weight: 700
+.price-title{
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 36px;
 }
-
-.price-card.featured {
-  background: linear-gradient(180deg, #ea7a3a, #d5642b);
-  color: #111;
-  transform: translateY(-6px)
+.price-value-container{
+  display: flex;
+  align-items: center;
 }
-
-.price-card .btn-primary {
-  margin-top: auto
+.price-value-container span{
+  font-size: 16px;
 }
+.price-value{
+  font-size: 26px;
+  margin-bottom: 16px;
+}
+.price-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 16px;
+}
+.price-card h3 {
+  font-size: 20px;
+}
+.price-card-content ul {
+  padding-left: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.price-card-content ul li {
+  font-size: 18px;
+  line-height: 1.5;
+}
+.price-card a{
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.2);
+  padding: 16px 42px;
+  font-size: 20px;
+  margin: 0 auto;
+  width: fit-content;
+  border-radius: 100px;
+  border: 2px solid var(--accent);
 
+  display: inline-block;
+  transition: transform 160ms ease;
+}
+.price-card a:hover {
+  transform: translateY(-3px);
+}
+.featured{
+  background: #EA6C36;
+  height: 660px;
+  justify-content: space-between;
+}
+.featured a{
+  background: white;
+  border: 2px solid rgba(0, 0, 0, 0.579)
+}
 
 .courses-section {
   padding: 40px 0 60px;
