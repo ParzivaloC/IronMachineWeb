@@ -147,9 +147,9 @@ const plansData = {
   },
 };
 
-// Когда страница загрузилась - настраиваем обработчики событий
+// Когда страница загрузилась настраиваем обработчики событий
 document.addEventListener("DOMContentLoaded", function () {
-  // все элементы
+  //все элементы
   const modal = document.getElementById("planModal");
   const modalClose = document.getElementById("modalClose");
   const modalCloseBtn = document.getElementById("modalCloseBtn");
@@ -159,18 +159,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalFeatures = document.getElementById("modalFeatures");
   const modalTags = document.getElementById("modalTags");
 
-  // Функция открытия окна - заполняем данными выбранного курса
+  // Функция открытия окна заполняем данными выбранного курса
   function openModal(planId) {
     const plan = plansData[planId];
 
     if (!plan) return;
 
-    // Заполняем основную информацию о курсе
+    //Заполнение основной инфы о курсе
     modalCategory.textContent = plan.category;
     modalTitle.textContent = plan.title;
     modalDescription.textContent = plan.description;
 
-    // Очищаем список особенностей и добавляем новые
+    //Очищаем список содержимого и добавляем новые
     modalFeatures.innerHTML = "";
     for (let i = 0; i < plan.features.length; i++) {
       const li = document.createElement("li");
