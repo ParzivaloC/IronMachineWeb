@@ -183,13 +183,13 @@ body {
   animation: slideInLine1 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s both;
 }
 
-/* Вторая линия - длиннее, появляется с задержкой */
+/* Вторая линия длиннее, появляется с задержкой */
 .title-lines .line-2 {
   width: 140px;
   animation: slideInLine2 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
 }
 
-/* Анимация для первой линии - выезжает слева */
+/* Анимация для первой линии выезжает слева */
 @keyframes slideInLine1 {
   0% {
     transform: translateX(-120%) scaleX(0);
@@ -201,7 +201,7 @@ body {
   }
 }
 
-/* Анимация для второй линии - тоже выезжает слева, но позже */
+/* Анимация для второй линии , выезжает слева, но позже */
 @keyframes slideInLine2 {
   0% {
     transform: translateX(-120%) scaleX(0);
@@ -252,7 +252,6 @@ body {
   max-width: 600px;
 }
 
-/* Акцентное слово в заголовке - оранжевое */
 .hero-content h1 .accent {
   color: var(--accent);
 }
@@ -300,7 +299,6 @@ body {
 
 .btn-ghost:hover {
   border-color: #fff;
-  /* Белая окантовка при наведении */
   background: rgba(255, 255, 255, 0.1);
   /* Легкая заливка при наведении */
   transform: translateY(-2px);
@@ -313,7 +311,7 @@ body {
   background: transparent;
 }
 
-/* Services */
+/* Сервисф */
 .services {
   width: 100%;
   box-sizing: border-box;
@@ -483,7 +481,6 @@ body {
   clear: both;
 }
 
-/* Внутри статистики все цифры в ряд */
 .stats-inner {
   display: flex;
   gap: 12px;
@@ -498,14 +495,12 @@ body {
   padding: 8px 10px;
 }
 
-/* Сама цифра - большая и оранжевая */
 .stat strong {
   display: block;
   color: var(--accent);
   font-size: 22px;
 }
 
-/* Секция с видео */
 .video {
   background: transparent;
   padding: 22px 0;
@@ -562,7 +557,6 @@ body {
   margin-bottom: 12px;
 }
 
-/* Карточки с ценами - три в ряд */
 .pricing-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -604,7 +598,7 @@ body {
   overflow: hidden;
 }
 
-/* Карточки курсов - адаптивная сетка, минимум 320px, фиксированные размеры */
+/* Карточки курсов - адаптивная сетка, минимум 320px после изменений */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -614,7 +608,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Каждая карточка курса - белая, с тенью, фиксированная высота */
 .card {
   background: linear-gradient(180deg, #fff, #fff);
   border-radius: var(--radius);
@@ -630,14 +623,12 @@ body {
   position: relative;
 }
 
-/* Верхняя часть карточки - оранжевый градиент */
 .card-media {
   background: var(--accent);
   height: 180px;
   background: linear-gradient(135deg, var(--accent), var(--accent-dark));
 }
 
-/* Тело карточки - контент внутри */
 .card-body {
   padding: 24px;
   flex: 1;
@@ -646,7 +637,6 @@ body {
   gap: 12px;
 }
 
-/* Заголовок карточки - черный и жирный */
 .card-title {
   margin: 0;
   color: #111;
@@ -655,7 +645,7 @@ body {
   line-height: 1.3;
 }
 
-/* Теги под заголовком - в ряд, переносятся если не влезают */
+/* Теги под заголовком в ряд, переносятся если не влезают */
 .tags {
   display: flex;
   gap: 8px;
@@ -663,7 +653,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* Каждый тег - фиолетовый, скругленный */
 .tag {
   background: #f1efff;
   color: #6b4fb3;
@@ -673,7 +662,6 @@ body {
   font-weight: 600;
 }
 
-/* Описание в карточке - серый текст */
 .card-desc {
   color: #666;
   font-size: 20px;
@@ -682,7 +670,7 @@ body {
   margin: 0;
 }
 
-/* Кнопка "Подробнее" - оранжевая, внизу карточки */
+/* Кнопка "Подробнее" */
 .btn-more {
   display: inline-block;
   margin-top: auto;
@@ -699,20 +687,17 @@ body {
   width: fit-content;
 }
 
-/* При наведении кнопка темнеет и сдвигается вправо */
 .btn-more:hover {
   background: var(--accent-dark);
   transform: translateX(4px);
 }
 
-/* Фокус на кнопке - оранжевая рамка для доступности */
 .btn-more:focus,
 .btn-register:focus {
   outline: 3px solid rgba(234, 122, 58, 0.4);
   outline-offset: 3px;
 }
 
-/* При наведении карточка поднимается вверх */
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4)
@@ -760,7 +745,6 @@ body {
   font-weight: 600;
 }
 
-/* Форма подписки - поле и кнопка в ряд */
 .subscribe {
   display: flex;
   gap: 12px;
@@ -789,7 +773,6 @@ body {
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* Кнопка отправки - оранжевая, больше */
 .subscribe button {
   background: var(--accent);
   border-radius: 8px;
@@ -870,11 +853,9 @@ body {
   .service-cards {
     grid-template-columns: repeat(2, 1fr);
   }
-  /* Секция "Почему мы" - одна колонка */
   .why-grid {
     grid-template-columns: 1fr;
   }
-  /* Цены - одна колонка */
   .pricing-grid {
     grid-template-columns: 1fr;
   }
@@ -894,7 +875,6 @@ body {
 .faq-section {
   padding: 48px 0 80px;
 }
-/* Каждый вопрос - с оранжевой линией снизу */
 .faq-list details {
   background: transparent;
   border-bottom: 2px solid var(--accent);
@@ -913,19 +893,17 @@ body {
   font-size: 18px;
 }
 
-/* Убираем стандартную стрелку */
+/*изменил станд стрелку */
 .faq-list summary::-webkit-details-marker {
   display: none;
 }
 
-/* Номер вопроса - полупрозрачный */
 .faq-list .num {
   color: rgba(255, 255, 255, 0.25);
   font-weight: 700;
   margin-right: 6px;
 }
 
-/* Плюсик справа - оранжевый, меняется на минус при открытии */
 .faq-list summary::after {
   content: "+";
   margin-left: auto;
@@ -933,12 +911,10 @@ body {
   font-weight: 900;
 }
 
-/* Когда открыт - показываем минус */
 .faq-list details[open] summary::after {
   content: "—";
 }
 
-/* Ответ на вопрос - серый текст */
 .faq-list .answer {
   padding: 12px 0 6px;
   padding-left: 45px;
@@ -987,7 +963,6 @@ body {
   padding: 36px 0;
 }
 
-/* Список отзывов - три в ряд */
 .testimonials-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1084,7 +1059,6 @@ body {
   }
 }
 
-/* Оверлей модального окна - темный фон на весь экран */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -1102,13 +1076,12 @@ body {
   padding: 20px;
 }
 
-/* Когда модалка активна - показываем */
+/* Когда модалка активна- показывается  */
 .modal-overlay.active {
   opacity: 1;
   visibility: visible;
 }
 
-/* Само модальное окно - темное, с рамкой */
 .modal-content {
   background: #1b1b1b;
   border-radius: 16px;
@@ -1124,12 +1097,11 @@ body {
   border: 1px solid rgba(234, 122, 58, 0.2);
 }
 
-/* Когда открыта - увеличиваем до нормального размера */
+/* увеличиваем до норм размера когда открыта */
 .modal-overlay.active .modal-content {
   transform: scale(1);
 }
 
-/* Кнопка закрытия - крестик справа вверху */
 .modal-close {
   position: absolute;
   top: 16px;
@@ -1148,12 +1120,10 @@ body {
   transition: background 0.2s ease;
 }
 
-/* При наведении на крестик - легкий фон */
 .modal-close:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Заголовок в модалке - оранжевый */
 .modal-title {
   color: var(--accent);
   font-size: 28px;
@@ -1162,7 +1132,6 @@ body {
   padding-right: 40px;
 }
 
-/* Категория курса - серый, маленькими буквами */
 .modal-category {
   color: rgba(255, 255, 255, 0.6);
   font-size: 14px;
@@ -1187,7 +1156,6 @@ body {
   margin: 0 0 24px;
 }
 
-/* Каждая особенность - с галочкой слева */
 .modal-features li {
   color: #cfcfcf;
   font-size: 15px;
@@ -1198,12 +1166,10 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Последний пункт без линии снизу */
 .modal-features li:last-child {
   border-bottom: none;
 }
 
-/* Галочка перед каждым пунктом - оранжевая */
 .modal-features li::before {
   content: "✓";
   position: absolute;
@@ -1213,7 +1179,6 @@ body {
   font-size: 18px;
 }
 
-/* Теги в модалке - в ряд */
 .modal-tags {
   display: flex;
   gap: 8px;
@@ -1221,7 +1186,6 @@ body {
   margin-bottom: 24px;
 }
 
-/* Каждый тег - оранжевый фон, прозрачный */
 .modal-tag {
   background: rgba(234, 122, 58, 0.15);
   color: var(--accent);
@@ -1231,14 +1195,12 @@ body {
   font-weight: 600;
 }
 
-/* Кнопки в модалке - в ряд */
 .modal-cta {
   display: flex;
   gap: 12px;
   margin-top: 24px;
 }
 
-/* Основная кнопка - оранжевая */
 .modal-btn {
   background: var(--accent);
   color: #fff;
@@ -1252,19 +1214,16 @@ body {
   font-size: 14px;
 }
 
-/* При наведении темнеет */
 .modal-btn:hover {
   background: var(--accent-dark);
 }
 
-/* Вторичная кнопка - только рамка */
 .modal-btn-secondary {
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.2);
   color: #fff;
 }
 
-/* При наведении - легкий фон */
 .modal-btn-secondary:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.3);
